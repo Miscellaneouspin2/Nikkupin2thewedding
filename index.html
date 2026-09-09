@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>निकिता एवं पिंटू — शाही विवाह आमंत्रण</title>
+
+    <meta property="og:title" content="निकिता एवं पिंटू — शाही विवाह आमंत्रण">
+    <meta property="og:description" content="निकिता एवं पिंटू के शुभ विवाह में आपका स्नेहिल स्वागत है। तिथि: 21 नवंबर 2026।">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+
+    <!-- Step 5: Web App Manifest for Home Screen Installation -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIk5pa2l0YSAmIFBpbnR1IFdlZGRpbmciLAogICJzaG9ydF9uYW1lIjogIk5pa2l0YSZQaW50dSIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMDA0MDAwIiwKICAidGhlbWVfY29sb3IiOiAiIzAwMDAwMCIKfQ==">
+
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --card-bg: rgba(45, 45, 50, 0.75);
+            --gold-primary: #f3d078;
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --gold-border: rgba(255, 255, 255, 0.4);
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;
+            --accent-red: #e11d48;
+            --emerald: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #000000 !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Gotu', sans-serif;
+            color: var(--text-main);
+        }
+
+        .font-serif { font-family: 'Trio Devanagari Hindi', 'Kruti Dev 010', 'Gotu'; }
+        .font-script { font-family: 'Kruti Dev 010', 'Trio Devanagari Hindi', 'Gotu'; }
+
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        #splash-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+            cursor: pointer;
+        }
+
+        #splash-screen.opened {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: scale(1.1);
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            width: 340px;
+            height: 480px;
+            background: linear-gradient(145deg, #1c1c1e, #0a0a0c);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            outline: 1px solid rgba(255, 255, 255, 0.15);
+            outline-offset: -5px;
+            border-radius: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            padding: 30px;
+        }
+
+        .envelope-monogram {
+            font-size: 48px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.4));
+        }
+
+        .wax-seal-btn {
+            width: 90px;
+            height: 90px;
+            background: radial-gradient(circle at 30% 30%, #fcd34d, #b45309 70%, #78350f 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.4);
+            margin: 25px 0;
+            animation: pulseSeal 2.5s infinite ease-in-out;
+            transition: transform 0.3s;
+        }
+
+        @keyframes pulseSeal {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+            50% { transform: scale(1.06); box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+        }
+
+        .wax-seal-inner {
+            font-size: 32px;
+            color: #451a03;
+        }
+
+        .main-container {
+            max-width: 520px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 20px 100px;
+        }
+
+        section {
+            padding: 35px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .glass-card {
+            background: linear-gradient(180deg, rgba(70, 70, 75, 0.6) 0%, rgba(35, 35, 40, 0.8) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            outline: 1px solid rgba(255, 255, 255, 0.15);
+            outline-offset: -5px;
+            border-radius: 28px;
+            padding: 30px 22px;
+            margin-bottom: 26px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.12), inset 0 0 15px rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+        }
+
+        .section-tag {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .section-heading {
+            font-size: 26px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .divider {
+            color: var(--gold-primary);
+            font-size: 18px;
+            margin: 15px 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            height: 1px;
+            width: 50px;
+            background: linear-gradient(90deg, transparent, var(--gold-border));
+        }
+
+        .divider::after {
+            background: linear-gradient(90deg, var(--gold-border), transparent);
+        }
+
+        .hero-section {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-names {
+            font-size: 38px;
+            line-height: 1.2;
+            margin: 15px 0;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+        }
+
+        .wedding-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--gold-border);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--gold-primary);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .couple-card-img {
+            width: 280px;
+            height: 450px;
+            margin: 0 auto 20px;
+            border-radius: 100px 100px 20px 20px;
+            border: 2px solid var(--gold-primary);
+            padding: 6px;
+            position: relative;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .couple-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 92px 92px 14px 14px;
+            display: block;
+        }
+
+        /* Groom Photo Adjustment */
+        .groom-img img {
+            object-position: center 20% !important;
+            transform: scale(1.0);
+        }
+
+        .couple-name {
+            font-size: 30px;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .couple-relation {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .event-title {
+            font-size: 20px;
+            color: var(--gold-primary);
+            margin-bottom: 6px;
+        }
+
+        .event-time {
+            font-size: 13px;
+            color: #f87171;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .event-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: var(--gold-gradient);
+            color: #050811;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .countdown-box {
+            background: rgba(30, 30, 35, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 18px;
+            padding: 15px 5px;
+            text-align: center;
+        }
+
+        .countdown-num {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f87171;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-top: 4px;
+        }
+
+        .story-timeline {
+            position: relative;
+            padding: 10px 0;
+            text-align: left;
+        }
+
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0; left: 20px;
+            width: 2px;
+            background: var(--gold-border);
+        }
+
+        .story-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .story-dot {
+            position: absolute;
+            left: 11px; top: 0;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            border: 4px solid var(--bg-dark);
+            box-shadow: 0 0 10px var(--gold-primary);
+        }
+
+        .story-date {
+            font-size: 11px;
+            color: var(--gold-primary);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .story-title {
+            font-size: 16px;
+            color: var(--text-main);
+            margin: 4px 0;
+        }
+
+        .story-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .dress-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .dress-card {
+            background: rgba(35, 35, 40, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 16px;
+            padding: 12px 6px;
+            text-align: center;
+        }
+
+        .dress-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 6px;
+            border: 1px solid var(--gold-border);
+        }
+
+        .dress-event { font-size: 10px; color: #ffffff; text-transform: uppercase; }
+        .dress-color { font-size: 11px; font-weight: 600; color: #f87171; margin-top: 2px; }
+
+        .quiz-card-step {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+            text-align: center;
+        }
+
+        .quiz-question-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #f87171;
+            margin-bottom: 10px;
+        }
+
+        .quiz-opt {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 8px;
+            background: rgba(20, 20, 25, 0.6);
+            border: 1px solid var(--gold-border);
+            border-radius: 14px;
+            color: white;
+            font-size: 13px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quiz-opt:hover {
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.15);
+        }
+
+        .concierge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .concierge-box {
+            background: rgba(20, 20, 25, 0.6);
+            border: 1px solid var(--gold-border);
+            border-radius: 16px;
+            padding: 14px 10px;
+            font-size: 12px;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .concierge-title {
+            color: var(--gold-primary);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        /* Step 3: Luxury Swipe Carousel for 10 Images */
+        .gallery-grid-10 {
+            display: flex;
+            grid-template-columns: none;
+            gap: 16px;
+            margin-top: 15px;
+            padding: 4px 8% 18px 0;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-padding-left: 0;
+            overscroll-behavior-inline: contain;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .gallery-grid-10::-webkit-scrollbar { display: none; }
+        .gallery-grid-10 img {
+            flex: 0 0 88%;
+            width: 88%;
+            height: clamp(430px, 112vw, 610px);
+            object-fit: cover;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,.45);
+            box-shadow: 0 18px 45px rgba(0,0,0,.58), inset 0 0 0 1px rgba(243,208,120,.12);
+            cursor: pointer;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            background: linear-gradient(145deg,#242428,#08080a);
+        }
+        .gallery-grid-10 img:focus-visible {
+            outline: 2px solid var(--gold-primary);
+            outline-offset: 4px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(20, 20, 25, 0.7);
+            border: 1px solid var(--gold-border);
+            border-radius: 14px;
+            padding: 14px 18px;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--gold-primary);
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 25, 0.92);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--gold-border);
+            padding: 12px 26px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 900;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        iframe, video { width: 100%; max-width: 100%; border-radius: 16px; }
+        .quiz-opt:disabled { cursor: default; opacity: 0.78; }
+        .quiz-opt.selected { opacity: 1; }
+        @media (max-width: 380px) {
+            .main-container { padding-left: 12px; padding-right: 12px; }
+            .envelope-wrapper { width: min(340px, calc(100vw - 24px)); height: min(480px, calc(100vh - 40px)); }
+            .couple-card-img { width: min(280px, 100%); height: 420px; }
+            .bottom-nav { width: calc(100% - 20px); justify-content: center; gap: 10px; padding: 10px 12px; }
+            .dress-grid { grid-template-columns: 1fr; }
+            .dress-img { height: 220px; }
+        }
+
+        :root { --luxury-shadow: 0 18px 50px rgba(0,0,0,.5); }
+        html { scroll-behavior: smooth; }
+        .v3-toolbar { position:fixed; top:12px; right:12px; z-index:950; display:flex; gap:8px; }
+        .v3-chip { border:1px solid var(--gold-border); background:rgba(10,10,12,.9); color:#fff; border-radius:999px; padding:9px 12px; cursor:pointer; }
+        .premium-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+        .premium-tile { background:rgba(15,15,18,.72); border:1px solid var(--gold-border); border-radius:18px; padding:16px; text-align:left; }
+        .premium-tile strong { color:var(--gold-primary); display:block; margin-bottom:5px; }
+        .welcome-personal { font-size:18px; margin:10px 0; color:var(--gold-primary); }
+        .modal { position:fixed; inset:0; z-index:1200; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.92); padding:20px; }
+        .modal.open { display:flex; }
+        .modal-panel { width:min(620px,100%); max-height:90vh; overflow:auto; background:#151519; border:1px solid var(--gold-border); border-radius:24px; padding:22px; box-shadow:var(--luxury-shadow); }
+        .modal img { max-width:100%; max-height:82vh; border-radius:18px; }
+        .modal-close { float:right; background:transparent; border:1px solid var(--gold-border); color:#fff; border-radius:50%; width:38px; height:38px; cursor:pointer; }
+        .wall-list { display:grid; gap:10px; margin-top:14px; }
+        .wall-wish { padding:12px; border-radius:14px; border:1px solid rgba(243,208,120,.28); background:rgba(0,0,0,.3); text-align:left; }
+        .offline-badge { display:none; position:fixed; left:50%; top:14px; transform:translateX(-50%); z-index:1400; background:#7f1d1d; color:#fff; border-radius:999px; padding:8px 14px; }
+        body.is-offline .offline-badge { display:block; }
+        #confettiCanvas { position:fixed; inset:0; z-index:1100; pointer-events:none; }
+        
+        /* Luxury Bride / Groom Festivity Tabs */
+        .event-side-tabs { display:flex; justify-content:center; gap:10px; margin:0 0 22px; position:sticky; top:10px; z-index:20; }
+        .event-tab-content { display:none; }
+        .event-tab-content.active { display:block; }
+        .event-card { padding:28px 22px; }
+        .event-location { color:#fff; font-size:12px; margin:-7px 0 17px; }
+        .event-card .btn-gold { min-width:190px; }
+
+        /* Custom Tab Styling */
+        .tab-btn {
+            background: rgba(20, 20, 25, 0.6);
+            border: 1px solid var(--gold-border);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+        .tab-btn.active {
+            background: var(--gold-gradient);
+            color: #000;
+            font-weight: bold;
+        }
+        .tab-content { display: none; margin-top: 15px; }
+        .tab-content.active { display: block; }
+
+        @media(max-width:520px){.premium-grid{grid-template-columns:1fr}.v3-toolbar{top:auto;bottom:82px}.bottom-nav{bottom:12px}.modal-panel{padding:16px}}
+    
+        /* हिंदी आमंत्रण के लिए सौम्य आयताकार शैली */
+        body { line-height:1.65; }
+        .glass-card { border-radius:18px; padding:28px 22px; background:linear-gradient(180deg,rgba(38,38,42,.96),rgba(20,20,23,.96)); }
+        .section-tag { font-size:13px; letter-spacing:1.5px; line-height:1.7; }
+        .section-heading { font-size:27px; line-height:1.55; letter-spacing:0; }
+        .event-title { font-size:21px; line-height:1.55; }
+        .event-time,.event-desc,.event-location { font-size:14px; line-height:1.7; }
+        .btn-gold,.tab-btn { font-family:'Gotu',sans-serif; letter-spacing:.3px; text-transform:none; font-size:13px; line-height:1.5; }
+        .form-control,.quiz-opt,.concierge-box,.nav-btn,.v3-chip { font-family:'Gotu',sans-serif; }
+        .bottom-nav { width:min(480px,calc(100% - 28px)); justify-content:space-between; gap:0; padding:11px 16px; border-radius:18px; }
+        .nav-btn { justify-content:center; flex:1; font-size:13px; line-height:1.45; white-space:nowrap; }
+        .v3-toolbar { top:16px; right:16px; }
+        .v3-chip { border-radius:14px; padding:10px 16px; font-size:13px; }
+        .couple-name { font-size:31px; line-height:1.5; }
+        .couple-relation { font-size:15px; line-height:1.8; }
+        .story-title { font-size:18px; line-height:1.55; }
+        .story-desc { font-size:14px; line-height:1.75; }
+        .countdown-label { font-size:11px; letter-spacing:0; }
+        @media(max-width:380px){.section-heading{font-size:24px}.nav-btn{font-size:11px}.bottom-nav{padding:10px 8px}.glass-card{padding:24px 17px}}
+    
+        /* केवल निर्धारित तीन फॉन्ट */
+        body, input, textarea, select, button { font-family:'Gotu'; }
+        h1, h2, h3, h4, .font-serif, .section-heading, .event-title,
+        .couple-name, .story-title, .gold-text { font-family:'Trio Devanagari Hindi','Kruti Dev 010','Gotu'; }
+        .font-script { font-family:'Kruti Dev 010','Trio Devanagari Hindi','Gotu'; }
+        /* स्क्रीनशॉट के अनुपात वाला कॉम्पैक्ट डैशबोर्ड */
+        .v3-toolbar { top:16px; right:16px; }
+        .v3-chip {
+            min-width:114px;
+            height:58px;
+            padding:0 18px;
+            border-radius:14px;
+            border:1px solid var(--gold-primary);
+            color:var(--gold-primary);
+            background:rgba(12,12,14,.94);
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            font-family:'Gotu';
+            font-size:15px;
+            line-height:1;
+            white-space:nowrap;
+        }
+        @media(max-width:380px){.v3-chip{min-width:108px;height:54px;padding:0 15px;font-size:14px}}
+    
+        /* संपूर्ण प्रीमियम संस्करण */
+        .luxury-loader{position:fixed;inset:0;z-index:1600;background:#000;display:grid;place-items:center;transition:.8s ease;}
+        .luxury-loader.hide{opacity:0;visibility:hidden;pointer-events:none;}
+        .loader-mark{width:110px;height:110px;border:1px solid #d5aa44;border-radius:24px;display:grid;place-items:center;color:#f3d078;font:700 30px 'Trio Devanagari Hindi','Gotu';box-shadow:0 0 55px rgba(213,170,68,.28);animation:loaderGlow 1.8s infinite alternate;}
+        .loader-line{height:2px;width:130px;margin:22px auto 0;background:linear-gradient(90deg,transparent,#d5aa44,transparent);animation:loaderLine 1.6s infinite;}
+        @keyframes loaderGlow{to{transform:scale(1.06);box-shadow:0 0 85px rgba(213,170,68,.48)}}
+        @keyframes loaderLine{0%{transform:scaleX(.2)}100%{transform:scaleX(1)}}
+        .illustration-hero{border-radius:22px;overflow:hidden;border:1px solid rgba(243,208,120,.55);box-shadow:0 22px 65px rgba(0,0,0,.68);margin:8px 0 28px;}
+        .illustration-hero img{display:block;width:100%;height:auto;}
+        .feature-status{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px;text-align:left;}
+        .status-tile{padding:13px;border:1px solid rgba(243,208,120,.28);border-radius:14px;background:rgba(0,0,0,.28);font-size:12px;}
+        .status-tile b{display:block;color:var(--gold-primary);margin-bottom:4px;}
+        .video-gallery{display:flex;overflow-x:auto;gap:14px;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 3px 16px;}
+        .video-gallery::-webkit-scrollbar{display:none}.video-card{flex:0 0 88%;scroll-snap-align:start;border:1px solid rgba(243,208,120,.35);border-radius:18px;background:#0b0b0d;overflow:hidden;}
+        .video-card iframe,.video-card video{height:245px;border-radius:0}.video-caption{padding:13px;color:var(--text-muted);font-size:12px;}
+        .analytics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:15px 0}.metric{border:1px solid rgba(243,208,120,.3);border-radius:14px;padding:13px;background:rgba(0,0,0,.3)}.metric strong{font-size:22px;color:var(--gold-primary);display:block}.metric span{font-size:11px;color:var(--text-muted)}
+        .analytics-chart{height:120px;display:flex;align-items:flex-end;gap:8px;padding:12px;border:1px solid rgba(243,208,120,.22);border-radius:14px}.analytics-bar{flex:1;min-height:8px;background:var(--gold-gradient);border-radius:6px 6px 2px 2px;transition:.5s}
+        .cloud-state{font-size:11px;margin-top:8px;color:var(--text-muted)}
+        @media(max-width:380px){.feature-status{grid-template-columns:1fr}.video-card{flex-basis:93%}}
+    
+.hero-section{padding-top:105px}.hero-names{padding:18px 8px 10px;line-height:1.55!important;overflow:visible}.weds-calligraphy{display:block;font-family:'Kruti Dev 010','Trio Devanagari Hindi','Gotu';font-size:.62em;margin:4px 0;color:var(--gold-primary);-webkit-text-fill-color:initial}
+.gift-heading-row{display:flex;align-items:baseline;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}.gift-heading-row .section-heading{margin:0}.gift-heading-row label{font-size:12px;color:var(--gold-primary);white-space:nowrap}.book-market-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}.market-btn{display:block;padding:12px;border:1px solid var(--gold-border);border-radius:14px;text-decoration:none;color:#fff;background:rgba(0,0,0,.35);font-size:12px}.video-gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 14px}.video-gallery::-webkit-scrollbar{display:none}.video-card{flex:0 0 88%;scroll-snap-align:start;border:1px solid rgba(243,208,120,.32);border-radius:18px;overflow:hidden;background:#0a0a0c}.video-screen{height:245px;display:grid;place-items:center;padding:20px;background:radial-gradient(circle,#2a2010,#08080a);color:var(--gold-primary)}.video-card video,.video-card iframe{width:100%;height:245px;border:0;border-radius:0}.video-caption{padding:12px;color:var(--text-muted);font-size:12px}.quiz-result{display:none;text-align:center;padding:15px;border-radius:12px;font-weight:700}.admin-only{display:none}
+</style>
+
+    <meta name="theme-color" content="#050505">
+    <meta name="description" content="निकिता and पिंटू luxury wedding invitation, 21 November 2026, Sawai Madhopur.">
+</head>
+<body><div id="luxuryLoader" class="luxury-loader" aria-label="वेबसाइट खुल रही है"><div><div class="loader-mark">N & P</div><div class="loader-line"></div><p style="margin-top:14px;color:#f3d078;text-align:center;font-size:12px;">शाही आमंत्रण सज रहा है…</p></div></div>
+
+    <div id="splash-screen" role="button" tabindex="0" aria-label="विवाह आमंत्रण खोलें">
+        <div class="envelope-wrapper">
+            <div class="envelope-monogram font-serif gold-text">N & P</div>
+            <div class="font-serif" style="color: var(--gold-primary); font-size: 14px; letter-spacing: 2px;">शाही आमंत्रण</div>
+            <div class="wax-seal-btn">
+                <span class="wax-seal-inner">❀</span>
+            </div>
+            <div class="font-script" style="font-size: 24px; color: var(--gold-primary);">आमंत्रण खोलें</div>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="main-container">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div style="font-size: 28px; color: var(--gold-primary); margin-bottom: 10px;">𑁍</div>
+            <div class="section-tag font-serif">परिवारजनों के स्नेह सहित</div>
+            <h1 class="hero-names font-serif gold-text">निकिता <span class="weds-calligraphy">weds</span> पिन्टू</h1>
+            <div class="wedding-badge font-serif">शनिवार, 21 नवंबर 2026</div>
+            <p class="font-script" style="font-size: 22px; color: var(--text-muted); max-width: 320px;">
+                “दो मन, एक अटूट साथ, जीवन भर का सुंदर सफर।”
+            </p>
+        </section>
+
+        <!-- Couple Section -->
+        <section id="couple">
+            <div class="section-tag">मांगलिक परिणय सूत्र</div>
+            <h2 class="section-heading font-serif gold-text">वधू एवं वर</h2>
+            <div class="divider">❖</div>
+
+            <div class="glass-card">
+                <div class="couple-card-img">
+                    <img loading="lazy" decoding="async" src="https://i.postimg.cc/pXVRRX3d/IMG-20260818-004246-733-(1).jpg" alt="निकिता">
+                </div>
+                <h3 class="couple-name font-serif">निकिता</h3>
+                <div class="section-tag" style="margin-bottom: 10px;">आयुष्मती वधू</div>
+                <div class="couple-relation">
+                    <strong> सुपुत्री श्रीमती संतोष देवी एवं श्री पूरन सिंह गुर्जर</strong>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <div class="couple-card-img groom-img">
+                    <img loading="lazy" decoding="async" src="https://i.postimg.cc/WztzyL3f/152728d9-fbb3-475a-9305-0009658023e9.jpg" alt="पिंटू">
+                </div>
+                <h3 class="couple-name font-serif">पिंटू</h3>
+                <div class="section-tag" style="margin-bottom: 10px;">आयुष्मान वर</div>
+                <div class="couple-relation">
+                    <strong> सुपुत्र श्रीमती रामपती देवी एवं स्वर्गीय श्री जुगराज गुर्जर</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Love Story Timeline -->
+        <section id="story">
+            <div class="section-tag">हमारा सफर</div>
+            <h2 class="section-heading font-serif gold-text">स्नेह से परिणय तक</h2>
+            <div class="divider">❖</div>
+
+            <div class="glass-card">
+                <div class="story-timeline">
+                    <div class="story-item">
+                        <div class="story-dot"></div>
+                        <div class="story-date">पहली भेंट</div>
+                        <h4 class="story-title font-serif">जब नियति ने मिलाया</h4>
+                        <p class="story-desc">एक सहज परिचय, जो अपनापन भरी बातों और सुंदर रिश्ते में बदल गया।</p>
+                    </div>
+                    <div class="story-item">
+                        <div class="story-dot"></div>
+                        <div class="story-date">शुभ संकल्प</div>
+                        <h4 class="story-title font-serif">रोका समारोह</h4>
+                        <p class="story-desc">दोनों परिवारों के आशीर्वाद से हमारे नए जीवन की मंगल शुरुआत हुई।</p>
+                    </div>
+                    <div class="story-item" style="margin-bottom: 0;">
+                        <div class="story-dot"></div>
+                        <div class="story-date">21 नवंबर 2026</div>
+                        <h4 class="story-title font-serif">शुभ विवाह</h4>
+                        <p class="story-desc">सात पवित्र वचनों के साथ हम जीवन के नए अध्याय में प्रवेश करेंगे।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events">
+            <div class="section-tag">मांगलिक कार्यक्रम</div>
+            <h2 class="section-heading font-serif gold-text">विवाह उत्सव</h2>
+            <div class="divider">❖</div>
+            <div class="event-side-tabs" role="tablist" aria-label="दोनों परिवारों के विवाह कार्यक्रम">
+                <button class="tab-btn active" type="button" role="tab" aria-selected="true" aria-controls="brideEvents" onclick="switchEventTab('brideEvents', this)">वधू पक्ष</button>
+                <button class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="groomEvents" onclick="switchEventTab('groomEvents', this)">वर पक्ष</button>
+            </div>
+            <div id="brideEvents" class="event-tab-content active" role="tabpanel">
+                <div class="glass-card event-card">
+                    <h3 class="event-title font-serif">लगन टीका</h3>
+                    <div class="event-time font-serif">11 नवंबर 2026 | 9:00 पूर्वाह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 निवास स्थान</p>
+                    <a href="https://maps.app.goo.gl/XgVTzjP9TsNtNV299" target="_blank" class="btn-gold">मार्ग देखें ➔</a>
+                </div>
+<div class="glass-card event-card">
+                    <h3 class="event-title font-serif">तेल एवं मेहंदी</h3>
+                    <div class="event-time font-serif">18 नवंबर 2026 | 10:00 - 11:00 पूर्वाह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 निवास स्थान</p>
+                    <a href="https://maps.app.goo.gl/XgVTzjP9TsNtNV299" target="_blank" class="btn-gold">मार्ग देखें ➔</a>
+                </div>
+<div class="glass-card event-card">
+                    <h3 class="event-title font-serif">हल्दी एवं मंडप</h3>
+                    <div class="event-time font-serif">19 नवंबर 2026 | 11:00 पूर्वाह्न - 12:00 अपराह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 निवास स्थान</p>
+                    <a href="https://maps.app.goo.gl/XgVTzjP9TsNtNV299" target="_blank" class="btn-gold">मार्ग देखें ➔</a>
+                </div>
+<div class="glass-card event-card">
+                    <h3 class="event-title font-serif">महिला संगीत</h3>
+                    <div class="event-time font-serif">20 नवंबर 2026 | प्रातः / सायं</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 निवास स्थान</p>
+                    <a href="https://maps.app.goo.gl/XgVTzjP9TsNtNV299" target="_blank" class="btn-gold">मार्ग देखें ➔</a>
+                </div>
+<div class="glass-card event-card">
+                    <h3 class="event-title font-serif">भात कार्यक्रम</h3>
+                    <div class="event-time font-serif">21 नवंबर 2026 | 9:00 पूर्वाह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 उत्सव पैलेस, सवाई माधोपुर</p>
+                    <a href="#" data-map-placeholder="ORIGINAL_MAP_LINK_HERE" class="btn-gold" onclick="event.preventDefault(); alert('यहाँ मूल मानचित्र लिंक जोड़ना है।');">मार्ग देखें ➔</a>
+                </div>
+<div class="glass-card event-card">
+                    <h3 class="event-title font-serif">शुभ विवाह</h3>
+                    <div class="event-time font-serif">21 नवंबर 2026 | प्रीतिभोज 7:00 अपराह्न | विवाह 10:00 अपराह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 उत्सव पैलेस, सवाई माधोपुर</p>
+                    <a href="#" data-map-placeholder="ORIGINAL_MAP_LINK_HERE" class="btn-gold" onclick="event.preventDefault(); alert('यहाँ मूल मानचित्र लिंक जोड़ना है।');">मार्ग देखें ➔</a>
+                </div>
+            </div>
+            <div id="groomEvents" class="event-tab-content" role="tabpanel" hidden>
+                <div class="glass-card event-card">
+                    <h3 class="event-title font-serif">लगन टीका</h3>
+                    <div class="event-time font-serif">11 नवंबर 2026 | 9:00 पूर्वाह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 निवास स्थान</p>
+                    <a href="#" data-map-placeholder="ORIGINAL_MAP_LINK_HERE" class="btn-gold" onclick="event.preventDefault(); alert('यहाँ मूल मानचित्र लिंक जोड़ना है।');">मार्ग देखें ➔</a>
+                </div>
+<div class="glass-card event-card">
+                    <h3 class="event-title font-serif">तेल</h3>
+                    <div class="event-time font-serif">18 नवंबर 2026 | 10:00 - 11:00 पूर्वाह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 निवास स्थान</p>
+                    <a href="#" data-map-placeholder="ORIGINAL_MAP_LINK_HERE" class="btn-gold" onclick="event.preventDefault(); alert('यहाँ मूल मानचित्र लिंक जोड़ना है।');">मार्ग देखें ➔</a>
+                </div>
+<div class="glass-card event-card">
+                    <h3 class="event-title font-serif">हल्दी एवं मंडप</h3>
+                    <div class="event-time font-serif">19 नवंबर 2026 | 11:00 पूर्वाह्न - 12:00 अपराह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 निवास स्थान</p>
+                    <a href="#" data-map-placeholder="ORIGINAL_MAP_LINK_HERE" class="btn-gold" onclick="event.preventDefault(); alert('यहाँ मूल मानचित्र लिंक जोड़ना है।');">मार्ग देखें ➔</a>
+                </div>
+<div class="glass-card event-card">
+                    <h3 class="event-title font-serif">भात समारोह</h3>
+                    <div class="event-time font-serif">20 नवंबर 2026 | 10:00 - 11:00 अपराह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 निवास स्थान</p>
+                    <a href="#" data-map-placeholder="ORIGINAL_MAP_LINK_HERE" class="btn-gold" onclick="event.preventDefault(); alert('यहाँ मूल मानचित्र लिंक जोड़ना है।');">मार्ग देखें ➔</a>
+                </div>
+<div class="glass-card event-card">
+                    <h3 class="event-title font-serif">शुभ विवाह</h3>
+                    <div class="event-time font-serif">21 नवंबर 2026 | 10:00 अपराह्न</div>
+                    <p class="event-desc">पारिवारिक परंपराओं और मंगल आशीर्वाद से सजे इस शुभ अवसर पर आपका हार्दिक स्वागत है।</p>
+                    <p class="event-location">📍 उत्सव पैलेस, सवाई माधोपुर</p>
+                    <a href="https://maps.app.goo.gl/ikBRsLpbdWyQrXndA?g_st=aw" target="_blank" class="btn-gold">मार्ग देखें ➔</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section id="countdown">
+            <div class="glass-card">
+                <div class="section-tag">शुभ घड़ी की प्रतीक्षा</div>
+                <h3 class="section-heading font-serif gold-text">विवाह तक शेष समय</h3>
+                <div class="countdown-grid">
+                    <div class="countdown-box">
+                        <span class="countdown-num font-serif" id="days">00</span>
+                        <span class="countdown-label">दिन</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-num font-serif" id="hours">00</span>
+                        <span class="countdown-label">घंटे</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-num font-serif" id="mins">00</span>
+                        <span class="countdown-label">मिनट</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-num font-serif" id="secs">00</span>
+                        <span class="countdown-label">सेकंड</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- उत्सव परिधान Guide -->
+        <section id="dresscode">
+            <div class="glass-card">
+                <div class="section-tag">परिधान सुझाव</div>
+                <h3 class="section-heading font-serif gold-text">उत्सव परिधान</h3>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">अपने सुंदर पारंपरिक परिधान में पधारें और उत्सव के रंगों में हमारे साथ शामिल हों।</p>
+
+                <div class="dress-grid">
+                    <div class="dress-card">
+                        <img loading="lazy" decoding="async" src="https://i.postimg.cc/2jF30G5C/30c4c60d-7c2f-4cf5-8326-f021188bbd02.jpg" alt="हल्दी Yellow Ethnic" class="dress-img">
+                        <div class="dress-event">हल्दी</div>
+                        <div class="dress-color">चमकीला पीला</div>
+                    </div>
+                    <div class="dress-card">
+                        <img loading="lazy" decoding="async" src="https://i.postimg.cc/P5cqCF6H/727f8691-964b-4664-b00f-7cb6482ade86.jpg" alt="मेहंदी Olive Green" class="dress-img">
+                        <div class="dress-event">मेहंदी</div>
+                        <div class="dress-color">पन्ना हरा</div>
+                    </div>
+                    <div class="dress-card">
+                        <img loading="lazy" decoding="async" src="https://i.postimg.cc/T3SPKHtQ/918bc4fd-802b-45d7-8f77-559c3d26e930-(1).jpg" alt="Royal विवाह Ethnic" class="dress-img">
+                        <div class="dress-event">विवाह</div>
+                        <div class="dress-color">शाही पारंपरिक</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trivia Quiz -->
+        <section id="quiz">
+            <div class="glass-card">
+                <div class="section-tag">मनोरंजक खेल</div>
+                <h3 class="section-heading font-serif gold-text">युगल परिचय प्रश्नोत्तरी</h3>
+                <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-bottom: 20px;">देखें, आप निकिता एवं पिंटू को कितना जानते हैं!</p>
+
+                <div class="quiz-card-step">
+                    <p class="quiz-question-title">1. मुख्य विवाह समारोह कहाँ आयोजित होगा?</p>
+                    <button class="quiz-opt" data-question="1" onclick="checkAnswer(this, false)">क) होटल राजविलास</button>
+                    <button class="quiz-opt" data-question="1" onclick="checkAnswer(this, true)">ख) उत्सव पैलेस, सवाई माधोपुर</button>
+                    <button class="quiz-opt" data-question="1" onclick="checkAnswer(this, false)">ग) रॉयल हेरिटेज पैलेस</button>
+                </div>
+
+                <div class="quiz-card-step" style="margin-bottom: 0; border-bottom: none;">
+                    <p class="quiz-question-title">2. युगल का आधिकारिक विवाह हैशटैग क्या है?</p>
+                    <button class="quiz-opt" data-question="2" onclick="checkAnswer(this, true)">क) #Nikkupin2thewedding</button>
+                    <button class="quiz-opt" data-question="2" onclick="checkAnswer(this, false)">ख) #पिंटूWedsनिकिता2026</button>
+                    <button class="quiz-opt" data-question="2" onclick="checkAnswer(this, false)">ग) #निकितापिंटूLoveStory</button>
+                </div>
+
+                <div id="quiz-score" class="quiz-result" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- Voice Kiosk -->
+        <section id="audio-kiosk">
+            <div class="glass-card">
+                <div class="section-tag">अपनी आवाज में शुभकामना</div>
+                <h3 class="section-heading font-serif gold-text">आवाज में आशीर्वाद भेजें</h3>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px;">व्हाट्सऐप पर निकिता एवं पिंटू के लिए अपनी आवाज में शुभकामना भेजें।</p>
+
+                <input type="text" id="voiceGuestName" class="form-control" placeholder="अपना पूरा नाम">
+                <button class="btn-gold" style="width: 100%;" onclick="sendVoiceWishesWhatsApp()">🎙️ व्हाट्सऐप पर वॉइस नोट भेजें</button>
+            </div>
+        </section>
+
+        <!-- संगीत गीत अनुरोध -->
+        <section id="sangeet-jukebox">
+            <div class="glass-card">
+                <div class="section-tag">संगीत और उल्लास</div>
+                <h3 class="section-heading font-serif gold-text">संगीत गीत अनुरोध</h3>
+                <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-bottom: 15px;">आप किस गीत पर नृत्य करना चाहेंगे? अपना पसंदीदा गीत भेजें।</p>
+
+                <input type="text" id="songGuestName" class="form-control" placeholder="आपका नाम">
+                <input type="text" id="songTitle" class="form-control" placeholder="गीत का नाम एवं फिल्म/कलाकार">
+                <button class="btn-gold" style="width: 100%;" onclick="submitSongRequest()">🎶 गीत का अनुरोध भेजें</button>
+            </div>
+        </section>
+
+        <!-- STEP 1: विवाह सेल्फी फ्रेम -->
+        <section id="photobooth">
+            <div class="glass-card">
+                <div class="section-tag">यादगार तस्वीरें</div>
+                <h3 class="section-heading font-serif gold-text">विवाह सेल्फी फ्रेम</h3>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px;">तस्वीर खींचें या चुनें और उसे हमारे विवाह फ्रेम में सजाएँ।</p>
+
+                <input type="file" id="selfieFileInput" accept="image/*" capture="user" style="display: none;" onchange="handleSelfieUpload(event)">
+
+                <div id="selfiePreviewBox" style="width: 100%; height: 280px; border: 2px dashed var(--gold-border); border-radius: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.3); margin-bottom: 15px; position: relative; overflow: hidden;">
+                    <canvas id="selfieCanvas" style="max-width: 100%; max-height: 100%; display: none; border-radius: 12px; filter: contrast(1.05) brightness(1.02);"></canvas>
+                    <div id="selfiePlaceholder">
+                        <div style="font-size: 30px;">📸</div>
+                        <div class="font-serif gold-text" style="font-size: 14px; margin-top: 6px;">#Nikkupin2thewedding</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button class="btn-gold" style="width: 100%;" onclick="document.getElementById('selfieFileInput').click()">✨ तस्वीर खींचें / चुनें</button>
+                    <div id="selfieActionBtns" style="display: none; gap: 10px;">
+                        <button class="btn-gold" style="flex: 1; background: #25D366; color: white;" onclick="shareSelfieNative()">📲 फ्रेम साझा करें</button>
+                        <button class="btn-gold" style="flex: 1; background: #3b82f6; color: white;" onclick="downloadSelfieImage()">⬇️ तस्वीर डाउनलोड करें</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- यात्रा एवं ठहराव सहायता -->
+        <section id="concierge">
+            <div class="glass-card">
+                <div class="section-tag">अतिथि सहायता</div>
+                <h3 class="section-heading font-serif gold-text">यात्रा एवं ठहराव सहायता</h3>
+                <p style="font-size: 12px; color: var(--text-muted);">स्थान, ठहरने या वाहन से जुड़ी सहायता चाहिए?</p>
+
+                <div class="concierge-grid">
+                    <a href="https://maps.google.com/?q=Jaipur+International+Airport" target="_blank" class="concierge-box">
+                        <div class="concierge-title">✈️ निकटतम हवाई अड्डा</div>
+                        <div>जयपुर अंतरराष्ट्रीय हवाई अड्डा (JAI)</div>
+                        <div style="font-size: 10px; color: var(--gold-primary); margin-top: 4px;">मार्ग देखने के लिए चुनें ➔</div>
+                    </a>
+                    <a href="https://maps.app.goo.gl/5AKXzoQGL4tWLLms6?g_st=ac" target="_blank" class="concierge-box">
+                        <div class="concierge-title">🚉 रेलवे स्टेशन</div>
+                        <div>सवाई माधोपुर जंक्शन</div>
+                        <div style="font-size: 10px; color: var(--gold-primary); margin-top: 4px;">मार्ग देखने के लिए चुनें ➔</div>
+                    </a>
+                </div>
+
+                <a href="https://wa.me/919352248897?text=Hi!%20Need%20assistance%20regarding%20wedding%20travel%20or%20stay." target="_blank" class="btn-gold" style="width: 100%; margin-top: 15px; text-decoration: none;">💬 ठहरने की सहायता लें</a>
+            </div>
+        </section>
+
+        <!-- STEP 2: गुप्त स्मृति पिटारा -->
+        <section id="secret-capsule">
+            <div class="glass-card">
+                <div class="section-tag">सरप्राइज स्मृति</div>
+                <h3 class="section-heading font-serif gold-text">गुप्त स्मृति पिटारा</h3>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px;">विवाह के दिन एक खास स्मृति अपने आप दिखाई देगी।</p>
+
+                <div id="capsuleLockedState" style="background: rgba(0,0,0,0.4); border: 1px solid var(--gold-border); border-radius: 16px; padding: 20px;">
+                    <div style="font-size: 32px;">🔒</div>
+                    <div id="capsuleTimerText" style="font-size: 11px; color: var(--gold-primary); font-weight: 600; margin-top: 8px;">21 नवंबर 2026 को अपने आप खुलेगा</div>
+                </div>
+
+                <div id="capsuleUnlockedState" style="display: none; background: rgba(16,185,129,0.1); border: 1px solid var(--emerald); border-radius: 16px; padding: 15px;">
+                    <div style="font-size: 32px;">🔓</div>
+                    <h4 class="font-serif gold-text" style="margin-top: 6px;">स्मृति पिटारा खुल गया!</h4>
+                    
+                    <!-- EDIT HERE: Step 2 - Yahan apni Image URL ya Video embed daalein -->
+                    <div style="margin-top: 10px;">
+                        <img src="https://via.placeholder.com/600x350?text=Your+Secret+विवाह+Memory+Image" alt="स्मृति पिटारा" style="width:100%; border-radius:12px; border:1px solid var(--gold-border);">
+                        <!-- Video ke liye upar wala img tag hata kar niche wala video tag uncomment karein: -->
+                        <!-- <video controls style="width:100%; border-radius:12px;"><source src="YOUR_VIDEO_URL.mp4" type="video/mp4"></video> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3: यादों की तस्वीरें (10 Images) -->
+        <section id="gallery">
+            <div class="section-tag">अनमोल पल</div>
+            <h2 class="section-heading font-serif gold-text">यादों की तस्वीरें</h2>
+            <div class="divider">❖</div>
+
+            <!-- EDIT HERE: Step 3 - Niche Apni 10 Images ke URL replace karein -->
+            <div class="gallery-grid-10">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="स्मृति 1" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="स्मृति 2" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="स्मृति 3" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="स्मृति 4" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+                <img loading="lazy" src="https://via.placeholder.com/300?text=Memory+5" alt="स्मृति 5" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+                <img loading="lazy" src="https://via.placeholder.com/300?text=Memory+6" alt="स्मृति 6" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+                <img loading="lazy" src="https://via.placeholder.com/300?text=Memory+7" alt="स्मृति 7" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+                <img loading="lazy" src="https://via.placeholder.com/300?text=Memory+8" alt="स्मृति 8" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+                <img loading="lazy" src="https://via.placeholder.com/300?text=Memory+9" alt="स्मृति 9" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+                <img loading="lazy" src="https://via.placeholder.com/300?text=Memory+10" alt="स्मृति 10" onclick="openImageModal(this.src)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(this.src);}">
+            </div>
+        </section>
+
+        <!-- STEP 4: Live Event Stream Wall Section REMOVED -->
+
+        <!-- उपस्थिति की पुष्टि Section -->
+        <section id="rsvp">
+            <div class="glass-card" style="text-align: center; padding: 25px 15px;">
+                <div class="section-tag">आपकी उपस्थिति हमारा सौभाग्य</div>
+                <h3 class="section-heading font-serif gold-text">उपस्थिति की पुष्टि</h3>
+                <div class="divider">❖</div>
+
+                <div id="rsvpPreview" style="padding: 10px 5px;">
+                    <p style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">
+                        कृपया बताएं कि आप हमारे इस शुभ अवसर में शामिल हो पाएँगे।
+                    </p>
+                    <button type="button" class="btn-gold" onclick="toggleRsvpForm()" style="padding: 12px 28px; font-size: 1rem; width: 100%; max-width: 280px;">
+                        ✨ उपस्थिति फॉर्म भरें
+                    </button>
+                </div>
+
+                <div id="rsvpFormContainer" style="display: none; margin-top: 20px; width: 100%; border-radius: 16px; overflow: hidden; background: rgba(255, 255, 255, 0.05);">
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSdFP_rxUGifP-wzZggsRjw1m7XipZjteTl0Z3sym3aDCiKhuA/viewform?embedded=true" 
+                        width="100%"
+                        height="800"
+                        title="निकिता एवं पिंटू विवाह उपस्थिति फॉर्म"
+                        loading="lazy" 
+                        frameborder="0">
+                        लोड हो रहा है…
+                    </iframe>
+
+                    <button type="button" onclick="toggleRsvpForm()" style="background: transparent; color: #d4af37; border: 1px solid #d4af37; padding: 8px 18px; border-radius: 20px; margin: 15px 0; cursor: pointer;">
+                        ▲ फॉर्म बंद करें
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 5: A Personal Welcome -->
+        
+
+        <!-- STEP 6: हमारी विवाह फिल्म -->
+        <section id="story-film"><div class="glass-card"><div class="section-tag">हमारी कहानी</div><h2 class="section-heading font-serif gold-text">विवाह वीडियो गैलरी</h2><p class="event-desc">प्री-वेडिंग, समारोह की झलक और आधिकारिक विवाह फिल्म यहाँ देखिए। वीडियो लिंक उपलब्ध न होने पर कार्ड साफ सूचना दिखाएगा।</p><div class="video-gallery" id="professionalVideoGallery"><article class="video-card"><div class="video-screen" data-video-key="preWedding">प्री-वेडिंग वीडियो शीघ्र जोड़ा जाएगा</div><div class="video-caption">प्री-वेडिंग फिल्म</div></article><article class="video-card"><div class="video-screen" data-video-key="highlights">समारोह की झलक शीघ्र जोड़ी जाएगी</div><div class="video-caption">समारोह की झलक</div></article><article class="video-card"><div class="video-screen" data-video-key="official">आधिकारिक विवाह फिल्म शीघ्र जोड़ी जाएगी</div><div class="video-caption">आधिकारिक विवाह फिल्म</div></article></div></div></section>
+
+        <section id="ceremony-guide">
+            <div class="glass-card">
+                <div class="section-tag">मुख्य समारोह</div>
+                <h2 class="section-heading font-serif gold-text">विवाह संध्या की समय-सारणी</h2>
+                <div style="text-align:left;">
+                    <div style="display:flex; gap:12px; padding:8px 0; border-bottom:1px dashed rgba(243,208,120,.25);"><span style="color:var(--gold-primary); font-weight:bold; min-width:75px;">7:00 अपराह्न</span><span>अतिथि स्वागत एवं प्रीतिभोज आरंभ</span></div>
+                    <div style="display:flex; gap:12px; padding:8px 0; border-bottom:1px dashed rgba(243,208,120,.25);"><span style="color:var(--gold-primary); font-weight:bold; min-width:75px;">समय शीघ्र</span><span>वधू प्रवेश</span></div>
+                    <div style="display:flex; gap:12px; padding:8px 0; border-bottom:1px dashed rgba(243,208,120,.25);"><span style="color:var(--gold-primary); font-weight:bold; min-width:75px;">समय शीघ्र</span><span>वरमाला समारोह</span></div>
+                    <div style="display:flex; gap:12px; padding:8px 0; border-bottom:1px dashed rgba(243,208,120,.25);"><span style="color:var(--gold-primary); font-weight:bold; min-width:75px;">समय शीघ्र</span><span>सात पवित्र फेरे</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 7: परिवार का आशीर्वाद -->
+        <section id="family-tree">
+            <div class="glass-card">
+                <div class="section-tag">परिवारजनों के स्नेह सहित</div>
+                <h2 class="section-heading font-serif gold-text">परिवार का आशीर्वाद</h2>
+                
+                <div style="display:flex; justify-content:center; gap:10px; margin-bottom:15px;">
+                    <button class="tab-btn active" onclick="switchFamilyTab('brideFamily', this)">वधू परिवार</button>
+                    <button class="tab-btn" onclick="switchFamilyTab('groomFamily', this)">वर परिवार</button>
+                </div>
+
+                <div id="brideFamily" class="tab-content active" style="text-align: left; line-height:1.8;">
+                    <h3 style="color:var(--gold-primary);" class="font-serif">वधू का परिवार</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        <li><strong>माता:</strong> श्रीमती संतोष देवी</li>
+                        <li><strong>पिता:</strong> श्री पूरन सिंह गुर्जर</li>
+                        <li><strong>भाई-बहन:</strong> विकास, सोनाली एवं सोनाक्षी</li>
+                        <li><strong>बच्चे:</strong> तमको, लक्ष्य</li>
+                    </ul>
+                </div>
+
+                <div id="groomFamily" class="tab-content" style="text-align: left; line-height:1.8;">
+                    <h3 style="color:var(--gold-primary);" class="font-serif">वर का परिवार</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        <li><strong>माता:</strong> श्रीमती रामपती देवी</li>
+                        <li><strong>पिता:</strong> स्वर्गीय श्री जुगराज गुर्जर</li>
+                        <li><strong>भाई:</strong> रामवीर एवं दिनेश</li>
+                        <li><strong>बच्चे:</strong> देविशा, लावण्या, लक्ष्य, हर्ष, सोनम</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 8: Gift & आशीर्वाद -->
+        <section id="gift-registry">
+            <div class="glass-card">
+                <div class="section-tag">स्नेह सहित</div><div class="gift-heading-row"><h2 class="section-heading font-serif gold-text">उपहार एवं आशीर्वाद</h2><label for="giftTargetPerson">किनको भेजना है</label></div>
+                <select id="giftTargetPerson" class="form-control" style="margin-top: 5px;" onchange="updateUPITargetInfo()">
+                    <option value="Bride">वधू के लिए</option>
+                    <option value="Groom">वर के लिए</option>
+                </select>
+
+                <div style="display:flex; justify-content:center; gap:8px; margin: 10px 0;">
+                    <button class="tab-btn active" onclick="switchGiftTab('giftBooksArea', this)">पुस्तक</button>
+                    <button class="tab-btn" onclick="switchGiftTab('giftBlessingsArea', this)">आशीर्वाद</button>
+                    <button class="tab-btn" onclick="switchGiftTab('giftMoneyArea', this)">शगुन</button>
+                </div>
+
+                <!-- 1. पुस्तक -->
+                <div id="giftBooksArea" class="tab-content active">
+                    <select id="giftBookAuthor" class="form-control">
+                        <option value="Osho">Osho</option>
+                        <option value="Aacharya Prashant">Aacharya Prashant</option>
+                        <option value="J. Krishnamurti">J. Krishnamurti</option>
+                        <option value="अन्य">अन्य</option>
+                    </select>
+                    <input type="text" id="giftBookName" class="form-control" placeholder="पुस्तक का नाम लिखें">
+                    <div class="book-market-grid"><a id="amazonBookLink" class="market-btn" target="_blank" rel="noopener noreferrer">Amazon पर पुस्तक खोजें</a><a id="flipkartBookLink" class="market-btn" target="_blank" rel="noopener noreferrer">Flipkart पर पुस्तक खोजें</a></div><button class="btn-gold" style="width:100%;" onclick="sendBookGiftWhatsApp()">व्हाट्सऐप से पुस्तक उपहार भेजें</button>
+                </div>
+
+                <!-- 2. आशीर्वाद -->
+                <div id="giftBlessingsArea" class="tab-content">
+                    <input type="text" id="giftSenderName" class="form-control" placeholder="आपका नाम">
+                    <textarea id="giftMessageText" class="form-control" rows="3" placeholder="अपना संदेश / आशीर्वाद लिखें..."></textarea>
+                    <button class="btn-gold" style="width:100%;" onclick="sendBlessingGiftWhatsApp()">व्हाट्सऐप से आशीर्वाद भेजें</button>
+                </div>
+
+                <!-- 3. शगुन -->
+                <div id="giftMoneyArea" class="tab-content">
+                    <p id="upiTargetText" style="font-size:12px; color:var(--gold-primary); margin-bottom:10px;">प्राप्तकर्ता UPI: nikita843@ptyes</p>
+                    <input type="number" id="upiPaymentAmount" class="form-control" placeholder="राशि रुपये में लिखें (₹)">
+                    <button class="btn-gold" style="width:100%; background:#10b981; color:#fff;" onclick="payViaUPI()">UPI ऐप से शगुन भेजें</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 9: डिजिटल शुभकामना पटल -->
+        <section id="wedding-wall">
+            <div class="glass-card">
+                <div class="section-tag">अतिथि संदेश</div>
+                <h2 class="section-heading font-serif gold-text">डिजिटल शुभकामना पटल</h2>
+                <input id="wallName" class="form-control" maxlength="40" placeholder="आपका नाम">
+                <textarea id="wallMessage" class="form-control" maxlength="240" rows="3" placeholder="अपना आशीर्वाद लिखें"></textarea>
+                <button class="btn-gold" style="width:100%" onclick="saveWish()">शुभकामना जोड़ें</button>
+                
+                <p style="text-align:left; font-size:12px; color:var(--gold-primary); margin-top:20px; font-weight:bold;">नवीनतम शुभकामनाएँ:</p>
+                <div id="wallList" class="wall-list" aria-live="polite"></div>
+            </div>
+        </section><section id="cloud-services"><div class="glass-card"><div class="section-tag">सुरक्षित ऑनलाइन सेवाएँ</div><h2 class="section-heading font-serif gold-text">क्लाउड अतिथि केंद्र</h2><p class="event-desc">शुभकामनाएँ इस डिवाइस पर तुरंत सुरक्षित रहती हैं। क्लाउड पता जोड़ने पर सभी अतिथियों के संदेश एक साझा सूची में भी सुरक्षित होंगे।</p><div class="feature-status"><div class="status-tile"><b>कस्टम डोमेन</b><span id="domainStatus">डोमेन जोड़ने के लिए तैयार</span></div><div class="status-tile"><b>प्रीमियम होस्टिंग</b><span id="hostingStatus">HTTPS पर प्रकाशित करने के लिए तैयार</span></div><div class="status-tile"><b>क्लाउड गेस्टबुक</b><span id="cloudGuestStatus">स्थानीय सुरक्षित मोड</span></div><div class="status-tile"><b>स्वचालित बैकअप</b><span id="backupStatus">क्लाउड पता जोड़ने पर सक्रिय</span></div></div><p class="cloud-state">CONFIG में अपना API पता और डोमेन जोड़ें। API उपलब्ध न होने पर वेबसाइट बिना रुकावट स्थानीय मोड में काम करेगी।</p></div></section>
+
+        <!-- STEP 10: आधिकारिक यादें -->
+        <section id="post-wedding">
+            <div class="glass-card">
+                <div class="section-tag">उत्सव के बाद</div>
+                <h2 id="postWeddingTitle" class="section-heading font-serif gold-text">आधिकारिक यादें</h2>
+                <p id="postWeddingText" style="font-size:12px; color:var(--text-muted); margin-bottom:15px;">आधिकारिक तस्वीरें और वीडियो उपलब्ध होने पर यहाँ दिखाई देंगे।</p>
+
+                <!-- EDIT HERE: Step 10 - Paste Video or Image URL in src="" -->
+                <div style="margin-top:10px;">
+                    <iframe id="officialMemoryMediaFrame" src="https://via.placeholder.com/800x450?text=Official+Memories+Video+or+Image+URL" height="250" frameborder="0" allowfullscreen style="border:1px dashed var(--gold-border);"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3 class="font-script gold-text" style="font-size: 32px;">निकिता & पिंटू</h3>
+            <p style="margin-top: 6px;">#Nikkupin2thewedding</p>
+            <p style="color: var(--gold-primary); margin-top: 15px;">परिवार और मित्रों के लिए स्नेह से बनाया गया ❣️</p>
+        </div>
+
+    </div>
+
+    <!-- Floating Navigation Bar -->
+    <div class="bottom-nav">
+        <button class="nav-btn" type="button" aria-label="पृष्ठभूमि संगीत चालू या बंद करें" onclick="toggleMusic()">🎵 <span id="musicState">संगीत बंद</span></button>
+        <div style="width: 1px; height: 15px; background: var(--gold-border);"></div>
+        <button class="nav-btn" type="button" aria-label="शेयर करें invitation on WhatsApp" onclick="shareWhatsApp()">💬 शेयर करें</button>
+        <div style="width: 1px; height: 15px; background: var(--gold-border);"></div>
+        <button class="nav-btn" type="button" aria-label="विवाह कैलेंडर में जोड़ें" onclick="addToCalendar()">📅 कैलेंडर में जोड़ें</button>
+    </div>
+
+    <div class="offline-badge">ऑफलाइन मोड</div>
+    <canvas id="confettiCanvas"></canvas>
+
+    <script>const ANALYTICS_KEY='np_analytics_v2';function getAnalytics(){try{return JSON.parse(localStorage.getItem(ANALYTICS_KEY)||'{"visits":0,"gallery":0,"shares":0,"days":{}}')}catch(e){return {visits:0,gallery:0,shares:0,days:{}}}}function trackActivity(k){const a=getAnalytics();a[k]=(a[k]||0)+1;const d=new Date().toISOString().slice(0,10);a.days[d]=(a.days[d]||0)+1;localStorage.setItem(ANALYTICS_KEY,JSON.stringify(a));}
+        const VIDEO_CONFIG={cloudApiUrl:'',customDomain:'',videoUrls:{preWedding:'',highlights:'',official:''}};
+        async function cloudRequest(path,options={}){if(!VIDEO_CONFIG.cloudApiUrl)return null;try{const r=await fetch(VIDEO_CONFIG.cloudApiUrl+path,{...options,headers:{'Content-Type':'application/json',...(options.headers||{})}});if(!r.ok)throw new Error('HTTP '+r.status);return await r.json().catch(()=>({ok:true}))}catch(e){console.warn('क्लाउड उपलब्ध नहीं, स्थानीय मोड सक्रिय',e);return null}}
+        async function syncWishToCloud(w){return cloudRequest('/wishes',{method:'POST',body:JSON.stringify(w)})}
+        function renderProfessionalVideos(){document.querySelectorAll('[data-video-key]').forEach(box=>{const u=VIDEO_CONFIG.videoUrls[box.dataset.videoKey];if(!u)return;const wrap=box.parentElement;if(/youtube\.com|youtu\.be/.test(u)){const id=(u.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{6,})/)||[])[1];if(id)box.outerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${id}" title="विवाह वीडियो" loading="lazy" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`}else{box.outerHTML=`<video controls preload="metadata"><source src="${u}" type="video/mp4">यह ब्राउज़र वीडियो नहीं चला पा रहा है।</video>`}})}
+        function updateDeploymentStatus(){const secure=location.protocol==='https:';document.getElementById('hostingStatus')&&(document.getElementById('hostingStatus').textContent=secure?'HTTPS सुरक्षित होस्टिंग सक्रिय':'HTTPS पर प्रकाशित करना बाकी');document.getElementById('domainStatus')&&(document.getElementById('domainStatus').textContent=VIDEO_CONFIG.customDomain||'कस्टम डोमेन यहाँ जोड़ें');document.getElementById('cloudGuestStatus')&&(document.getElementById('cloudGuestStatus').textContent=VIDEO_CONFIG.cloudApiUrl?'क्लाउड सिंक तैयार':'स्थानीय बैकअप सक्रिय');}
+
+        
+        const APP_CONFIG = {
+            cloudApiUrl: '', // यहाँ अपने क्लाउड गेस्टबुक API का HTTPS पता जोड़ें
+            customDomain: '', // उदाहरण: wedding.example.com
+            premiumHosting: true
+        };
+        const analyticsKey = 'np_analytics_v1';
+        function getAnalytics(){ try{return JSON.parse(localStorage.getItem(analyticsKey)||'{"visits":0,"gallery":0,"shares":0,"days":{}}')}catch(e){return {visits:0,gallery:0,shares:0,days:{}}} }
+        function saveAnalytics(a){ localStorage.setItem(analyticsKey,JSON.stringify(a)); }
+        function trackActivity(type){ const a=getAnalytics(); a[type]=(a[type]||0)+1; const day=new Date().toISOString().slice(0,10); a.days[day]=(a.days[day]||0)+1; saveAnalytics(a); }
+        async function cloudSaveWish(wish){ if(!APP_CONFIG.cloudApiUrl) return false; try{ const r=await fetch(APP_CONFIG.cloudApiUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(wish)}); return r.ok; }catch(e){return false} }
+        async function cloudLoadWishes(){ if(!APP_CONFIG.cloudApiUrl) return []; try{ const r=await fetch(APP_CONFIG.cloudApiUrl); if(!r.ok)return []; const d=await r.json(); return Array.isArray(d)?d:[]; }catch(e){return []} }
+        function renderAnalytics(){ const a=getAnalytics(); const wishes=getWishes(); document.getElementById('metricVisits').textContent=a.visits||0; document.getElementById('metricWishes').textContent=wishes.length; document.getElementById('metricGallery').textContent=a.gallery||0; document.getElementById('metricShares').textContent=a.shares||0; const chart=document.getElementById('analyticsChart'); if(!chart)return; chart.replaceChildren(); const vals=[]; for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);vals.push(a.days[d.toISOString().slice(0,10)]||0)} const max=Math.max(1,...vals); vals.forEach(v=>{const b=document.createElement('div');b.className='analytics-bar';b.style.height=(12+v/max*88)+'%';b.title=v+' गतिविधियाँ';chart.appendChild(b)}); }
+        function updateServiceStatus(){ document.getElementById('domainStatus').textContent=APP_CONFIG.customDomain||'डोमेन जोड़ने के लिए तैयार'; document.getElementById('hostingStatus').textContent=location.protocol==='https:'?'HTTPS सुरक्षित होस्टिंग सक्रिय':'HTTPS पर प्रकाशित करने के लिए तैयार'; document.getElementById('cloudGuestStatus').textContent=APP_CONFIG.cloudApiUrl?'क्लाउड सिंक सक्रिय':'स्थानीय सुरक्षित मोड'; document.getElementById('backupStatus').textContent=APP_CONFIG.cloudApiUrl?'स्वचालित क्लाउड बैकअप सक्रिय':'क्लाउड पता जोड़ने पर सक्रिय'; }
+
+        // Music & Splash Setup
+        let isPlaying = false;
+
+        function openInvitation() {
+            var splash = document.getElementById('splash-screen');
+            if (splash) splash.classList.add('opened');
+
+            var audio = document.getElementById('bg-music');
+            if (audio) {
+                audio.play().then(function() {
+                    var musicState = document.getElementById('musicState');
+                    if (musicState) musicState.innerText = 'संगीत चालू';
+                    isPlaying = true;
+                }).catch(function(e) {
+                    console.log('ब्राउज़र ने अपने आप संगीत चलाने की अनुमति नहीं दी');
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() { trackActivity('visits'); renderProfessionalVideos(); updateDeploymentStatus(); updateBookLinks(); document.getElementById('giftBookAuthor')?.addEventListener('change',updateBookLinks); document.getElementById('giftBookName')?.addEventListener('input',updateBookLinks);
+            trackActivity('visits');
+            updateServiceStatus();
+            setTimeout(function(){document.getElementById('luxuryLoader')?.classList.add('hide');},900);
+            var splash = document.getElementById('splash-screen');
+            const audio = document.getElementById('bg-music');
+            if (audio) {
+                audio.addEventListener('pause', function() {
+                    isPlaying = false;
+                    const state = document.getElementById('musicState');
+                    if (state) state.innerText = 'संगीत बंद';
+                });
+            }
+            if (splash) {
+                splash.addEventListener('click', openInvitation); splash.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvitation();}});
+                splash.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvitation();}});
+            }
+        });
+
+        // STEP 2: गुप्त स्मृति पिटारा Auto Reveal Function
+        const targetDate = new Date('2026-11-21T00:00:00+05:30').getTime();
+        let countdownInterval = null;
+
+        function updateTimer() {
+            const diff = targetDate - Date.now();
+            if (diff > 0) {
+                const days = Math.floor(diff / 86400000);
+                const hours = Math.floor((diff % 86400000) / 3600000);
+                const mins = Math.floor((diff % 3600000) / 60000);
+                const secs = Math.floor((diff % 60000) / 1000);
+                
+                if(document.getElementById('days')) document.getElementById('days').innerText = String(days).padStart(2, '0');
+                if(document.getElementById('hours')) document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                if(document.getElementById('mins')) document.getElementById('mins').innerText = String(mins).padStart(2, '0');
+                if(document.getElementById('secs')) document.getElementById('secs').innerText = String(secs).padStart(2, '0');
+            } else {
+                // Auto reveal capsule on wedding day
+                const locked = document.getElementById('capsuleLockedState');
+                const unlocked = document.getElementById('capsuleUnlockedState');
+                if (locked) locked.style.display = 'none';
+                if (unlocked) unlocked.style.display = 'block';
+                if (countdownInterval) clearInterval(countdownInterval);
+            }
+        }
+        updateTimer();
+        countdownInterval = setInterval(updateTimer, 1000);
+
+        async function toggleMusic() {
+            const audio = document.getElementById('bg-music');
+            const state = document.getElementById('musicState');
+            if (!audio) return;
+            if (!audio.paused) {
+                audio.pause();
+                isPlaying = false;
+                if (state) state.innerText = 'संगीत बंद';
+                return;
+            }
+            try {
+                await audio.play();
+                isPlaying = true;
+                if (state) state.innerText = 'संगीत चालू';
+            } catch (error) {
+                alert('संगीत चलाने में समस्या हुई।');
+            }
+        }
+
+        const answeredQuizQuestions = new Set();
+        let correctQuizAnswers = 0;
+        function checkAnswer(btn, isCorrect) {
+            const question = btn.dataset.question;
+            if (!question || answeredQuizQuestions.has(question)) return;
+            answeredQuizQuestions.add(question);
+            if (isCorrect) correctQuizAnswers += 1;
+            const group = btn.closest('.quiz-card-step');
+            if (group) {
+                group.querySelectorAll('.quiz-opt').forEach(function(option) { option.disabled = true; });
+            }
+            btn.classList.add('selected');
+            btn.style.background = isCorrect ? 'var(--emerald)' : 'var(--accent-red)';
+            btn.style.borderColor = isCorrect ? 'var(--emerald)' : 'var(--accent-red)';
+            if (answeredQuizQuestions.size >= 2) {
+                const score = document.getElementById('quiz-score');
+                if (score) {
+                    const messages = ['आप विवाह के विवरण को अभी ठीक से नहीं जानते। ऊपर दिए कार्यक्रमों को एक बार फिर देखिए।','आप युगल और विवाह की जानकारी थोड़ा-बहुत जानते हैं।','🎉 बहुत बढ़िया! आप युगल और विवाह की जानकारी बहुत अच्छी तरह जानते हैं।'];
+                    score.textContent = messages[correctQuizAnswers]; score.style.display='block';
+                    score.style.color = correctQuizAnswers===2?'var(--emerald)':correctQuizAnswers===1?'var(--gold-primary)':'#f87171';
+                    score.style.border='1px solid currentColor'; score.style.background='rgba(0,0,0,.28)';
+                }
+            }
+        }
+
+        function sendVoiceWishesWhatsApp() {
+            var name = document.getElementById('voiceGuestName').value.trim();
+            if(!name) return alert('कृपया पहले अपना नाम लिखें।');
+            var messageText = "🎙️ *आवाज में आशीर्वाद*\n\n*प्रेषक:* " + name + "\n\nआपके शुभ विवाह के लिए मेरी हार्दिक शुभकामनाएँ! ✨";
+            window.open('https://wa.me/919352248897?text=' + encodeURIComponent(messageText), '_blank');
+        }
+
+        function submitSongRequest() {
+            var name = document.getElementById('songGuestName').value.trim();
+            var song = document.getElementById('songTitle').value.trim();
+            if(!name || !song) return alert('कृपया अपना नाम और गीत का नाम दोनों लिखें।');
+            var messageText = "🎶 *संगीत के लिए गीत अनुरोध*\n\n👤 *अतिथि नाम:* " + name + "\n🎵 *गीत:* " + song;
+            window.open('https://wa.me/919352248897?text=' + encodeURIComponent(messageText), '_blank');
+        }
+
+        // STEP 1: Selfie Frame Handling (Object-Fit Contain & Overlay)
+        function handleSelfieUpload(e) {
+            const file = e.target.files && e.target.files[0];
+            if (!file) return;
+            const img = new Image();
+            const objectUrl = URL.createObjectURL(file);
+            img.onload = function() {
+                const canvas = document.getElementById('selfieCanvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = 600;
+                canvas.height = 600;
+                
+                ctx.fillStyle = '#050505';
+                ctx.fillRect(0, 0, 600, 600);
+
+                // Fit without cropping (object-fit: contain)
+                const scale = Math.min(560 / img.width, 560 / img.height);
+                const x = (600 - img.width * scale) / 2;
+                const y = (600 - img.height * scale) / 2;
+                
+                ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+                
+                // Outer Border
+                ctx.strokeStyle = '#f3d078';
+                ctx.lineWidth = 12;
+                ctx.strokeRect(6, 6, 588, 588);
+                
+                // Bottom Overlay Bar
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+                ctx.fillRect(0, 500, 600, 100);
+                
+                ctx.fillStyle = '#f3d078';
+                ctx.font = 'bold 24px serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('निकिता एवं पिंटू का शुभ विवाह', 300, 538);
+                ctx.font = '18px sans-serif';
+                ctx.fillStyle = '#ffffff';
+                ctx.fillText('✨ #Nikkupin2thewedding ✨', 300, 572);
+
+                document.getElementById('selfiePlaceholder').style.display = 'none';
+                canvas.style.display = 'block';
+                document.getElementById('selfieActionBtns').style.display = 'flex';
+                URL.revokeObjectURL(objectUrl);
+            };
+            img.src = objectUrl;
+        }
+
+        function shareSelfieNative() {
+            var canvas = document.getElementById('selfieCanvas');
+            canvas.toBlob(async function(blob) {
+                var file = new File([blob], 'wedding_selfie.png', { type: 'image/png' });
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({ files: [file], title: 'विवाह सेल्फी', text: '#Nikkupin2thewedding' });
+                } else { downloadSelfieImage(); }
+            });
+        }
+
+        function downloadSelfieImage() {
+            var canvas = document.getElementById('selfieCanvas');
+            var link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'निकिता_पिंटू_विवाह_Frame.png';
+            link.click();
+        }
+
+        // STEP 5: PWA Install Prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt = null;
+            } else {
+                alert('ऐप इंस्टॉल करने के लिए ब्राउज़र मेन्यू में “होम स्क्रीन पर जोड़ें” चुनें।');
+            }
+        }
+
+        function switchEventTab(tabId, btn) {
+            document.querySelectorAll('#events .event-tab-content').forEach(function(panel) {
+                const active = panel.id === tabId;
+                panel.classList.toggle('active', active);
+                panel.hidden = !active;
+            });
+            document.querySelectorAll('#events .tab-btn').forEach(function(button) {
+                const active = button === btn;
+                button.classList.toggle('active', active);
+                button.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+        }
+        // STEP 7: Family Tabs Toggler
+        function switchFamilyTab(tabId, btn) {
+            document.querySelectorAll('#family-tree .tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('#family-tree .tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        // STEP 8: Gift & आशीर्वाद Logic
+        function switchGiftTab(tabId, btn) {
+            document.querySelectorAll('#gift-registry .tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('#gift-registry .tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        function updateUPITargetInfo() {
+            const target = document.getElementById('giftTargetPerson').value;
+            const upi = target === 'Bride' ? 'nikita843@ptyes' : '9352248897@ptyes';
+            document.getElementById('upiTargetText').innerText = `प्राप्तकर्ता UPI (${target === 'Bride' ? 'वधू' : 'वर'}): ${upi}`;
+        }
+
+        function getBookQuery(){ const author=document.getElementById('giftBookAuthor').value; const title=document.getElementById('giftBookName').value.trim(); return [author,title].filter(Boolean).join(' '); }
+        function updateBookLinks(){ const q=getBookQuery()||'Osho Acharya Prashant J Krishnamurti books'; document.getElementById('amazonBookLink').href='https://www.amazon.in/s?k='+encodeURIComponent(q)+'&i=stripbooks'; document.getElementById('flipkartBookLink').href='https://www.flipkart.com/search?q='+encodeURIComponent(q); }
+        function sendBookGiftWhatsApp() { const target=document.getElementById('giftTargetPerson').value==='Bride'?'वधू':'वर'; const title=document.getElementById('giftBookName').value.trim(); if(!title)return alert('कृपया पुस्तक का नाम लिखें।'); const text=`हम आपको ${title} वाली किताब उपहार में देने वाले हैं।
+प्राप्तकर्ता: ${target}`; window.open('https://wa.me/919352248897?text='+encodeURIComponent(text),'_blank','noopener'); }
+
+        function sendBlessingGiftWhatsApp() {
+            const target = document.getElementById('giftTargetPerson').value;
+            const name = document.getElementById('giftSenderName').value.trim();
+            const blessing = document.getElementById('giftMessageText').value.trim();
+            if(!name || !blessing) return alert('कृपया अपना नाम और आशीर्वाद संदेश लिखें।');
+
+            // Save for Step 9 Digital Wall
+            saveWishCustom(name, blessing);
+
+            const text = `*विवाह आशीर्वाद: ${target}*\n*प्रेषक:* ${name}\n*संदेश:* ${blessing}`;
+            window.open(`https://wa.me/919352248897?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function payViaUPI() {
+            const target = document.getElementById('giftTargetPerson').value;
+            const amount = document.getElementById('upiPaymentAmount').value;
+            const upiId = target === 'Bride' ? 'nikita843@ptyes' : '9352248897@ptyes';
+
+            if(!amount || amount <= 0) return alert('कृपया सही राशि लिखें।');
+
+            const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(target)}&am=${amount}&cu=INR&tn=${encodeURIComponent('विवाह शगुन')}`;
+            window.location.href = upiUrl;
+        }
+
+        // STEP 9: डिजिटल शुभकामना पटल Real-time Display
+        function getWishes(){ try { return JSON.parse(localStorage.getItem('np_wishes_v3') || '[]'); } catch(e){ return []; } }
+        
+        function renderWishes(){
+            const list = document.getElementById('wallList');
+            if(!list) return;
+            const wishes = getWishes();
+            list.replaceChildren();
+            wishes.slice().reverse().forEach(w => {
+                const card = document.createElement('div');
+                card.className = 'wall-wish';
+                const strong = document.createElement('strong');
+                strong.style.color = 'var(--gold-primary)';
+                strong.textContent = w.name + ': ';
+                const span = document.createElement('span');
+                span.textContent = w.message;
+                card.append(strong, span);
+                list.appendChild(card);
+            });
+            const count = document.getElementById('adminWishCount');
+            if(count) count.textContent = String(wishes.length);
+        }
+
+        function saveWish(){
+            const n = document.getElementById('wallName'), m = document.getElementById('wallMessage');
+            const name = n.value.trim(), message = m.value.trim();
+            if(!name || !message) return alert('कृपया नाम और आशीर्वाद दोनों लिखें।');
+            saveWishCustom(name, message);
+            n.value = ''; m.value = '';
+        }
+
+        function saveWishCustom(name, message) {
+            const wishes = getWishes();
+            wishes.push({ name: name.slice(0, 40), message: message.slice(0, 240), createdAt: new Date().toISOString() });
+            localStorage.setItem('np_wishes_v3', JSON.stringify(wishes.slice(-100)));
+            renderWishes();
+            syncWishToCloud(wishes[wishes.length-1]);
+        }
+
+        // STEP 11: Export Wishes (TXT / CSV / JSON)
+        function exportWishesCustom(format) {
+            const wishes = getWishes();
+            let content = "";
+            let mimeType = "text/plain";
+            let fileName = `विवाह_Wishes_Export.${format}`;
+
+            if(format === 'txt') {
+                wishes.forEach(w => content += `नाम: ${w.name}\nशुभकामना: ${w.message}\nतिथि: ${w.createdAt}\n-------------------\n`);
+            } else if(format === 'csv') {
+                mimeType = "text/csv";
+                content = "Name,Message,Date\n" + wishes.map(w => `"${w.name}","${w.message}","${w.createdAt}"`).join("\n");
+            } else if(format === 'json') {
+                mimeType = "application/json";
+                content = JSON.stringify(wishes, null, 2);
+            }
+
+            const blob = new Blob([content], { type: mimeType });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = fileName;
+            a.click();
+        }
+
+        function openImageModal(src) { trackActivity('gallery'); trackActivity('gallery');
+            document.getElementById('modalImage').src = src;
+            document.getElementById('imageModal').classList.add('open');
+        }
+
+        function openAdmin(){
+            document.getElementById('adminModal').classList.add('open');
+            document.getElementById('adminGuest').textContent = 'अतिथि';
+            document.getElementById('adminConnection').textContent = navigator.onLine ? 'ऑनलाइन' : 'ऑफलाइन';
+            renderWishes();
+        }
+
+        function closeModal(id){ document.getElementById(id)?.classList.remove('open'); }
+
+        function shareWhatsApp() { trackActivity('shares'); trackActivity('shares');
+            var shareText = "✨ *सादर आमंत्रण!* ✨\n\nनिकिता एवं पिंटू के शुभ विवाह में सादर आमंत्रित हैं: *निकिता & पिंटू* 💍👑\n\n📅 *तिथि:* 21 नवंबर 2026\n📍 *स्थान:* उत्सव पैलेस, सवाई माधोपुर\n\nआमंत्रण खोलने के लिए चुनें:\n" + window.location.href;
+            window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(shareText), '_blank');
+        }
+
+        function addToCalendar() {
+            window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=निकिता+%26+पिंटू+विवाह&dates=20261121T133000Z/20261121T220000Z&details=विवाह+Ceremony&location=Utsav+Palace,+SWM', '_blank');
+        }
+
+        function toggleRsvpForm() {
+            var formContainer = document.getElementById('rsvpFormContainer');
+            var previewBox = document.getElementById('rsvpPreview');
+            var isHidden = formContainer.style.display === 'none' || formContainer.style.display === '';
+            formContainer.style.display = isHidden ? 'block' : 'none';
+            previewBox.style.display = isHidden ? 'none' : 'block';
+        }
+
+        async function copyGuestLink(){try{await navigator.clipboard.writeText(location.href)}catch(e){const t=document.createElement('textarea');t.value=location.href;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}alert('आमंत्रण लिंक कॉपी हो गया!')} 
+
+        function launchConfetti() {
+            const c = document.getElementById('confettiCanvas'), ctx = c.getContext('2d');
+            c.width = innerWidth; c.height = innerHeight;
+            const colors = ['#f3d078','#e11d48','#10b981','#fff'];
+            let pieces = Array.from({length:100},()=>({x:Math.random()*c.width, y:-20-Math.random()*c.height*.4, v:2+Math.random()*5, s:4+Math.random()*6, col:colors[Math.floor(Math.random()*colors.length)]}));
+            let frame = 0;
+            (function draw(){
+                ctx.clearRect(0,0,c.width,c.height);
+                pieces.forEach(p=>{ p.y += p.v; p.x += Math.sin(p.y/30); ctx.fillStyle = p.col; ctx.fillRect(p.x,p.y,p.s,p.s); });
+                if(frame++ < 220) requestAnimationFrame(draw); else ctx.clearRect(0,0,c.width,c.height);
+            })();
+        }
+
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'));});
+        document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'));});
+        // Initialize Wishes
+        renderWishes();
+    </script>
+</body>
+</html>
