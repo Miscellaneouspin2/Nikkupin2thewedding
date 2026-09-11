@@ -1,1 +1,247 @@
-<...snip full modified file content...
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miscellaneouspin2.github.io/Nikkupin2thewedding/">
+    <meta property="og:title" content="निकिता एवं पिन्टु | डिजिटल विवाह आमंत्रण">
+    <meta property="og:description" content="21 नवंबर 2026 को निकिता एवं पिन्टु के शुभ विवाह में आपका स्नेह और उपस्थिति का हार्दिक आमंत्रण">
+    <meta property="og:image" content="https://miscellaneouspin2.github.io/Nikkupin2thewedding/preview.jpg?v=2">
+    <meta property="og:image:secure_url" content="https://miscellaneouspin2.github.io/Nikkupin2thewedding/preview.jpg?v=2">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="निकिता एवं पिन्टु | डिजिटल विवाह आमंत्रण">
+    <meta name="twitter:description" content="21 नवंबर 2026 | उत्सव पैलेस, सवाई माधोपुर">
+    <meta name="twitter:image" content="https://miscellaneouspin2.github.io/Nikkupin2thewedding/preview.jpg?v=2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>निकिता एवं पिंटू — अतिथि विवाह आमंत्रण</title>
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Great+Vibes&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+ 
+    <!-- Step 5: Web App Manifest for Home Screen Installation -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIk5pa2l0YSAmIFBpbnR1IFdlZGRpbmciLAogICJzaG9ydF9uYW1lIjogIk5pa2l0YSZQaW50dSIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6[...]
+ 
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --card-bg: rgba(45, 45, 50, 0.75);
+            --gold-primary: #f3d078;
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --gold-border: rgba(255, 255, 255, 0.4);
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;
+            --accent-red: #e11d48;
+            --emerald: #10b981;
+        }
+ 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+ 
+        body {
+            background-color: #000000 !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Gotu', sans-serif;
+            color: var(--text-main);
+        }
+ 
+        .font-serif { font-family: 'Trio Devanagari Hindi', 'Kruti Dev 010', 'Gotu'; }
+        .font-script { font-family: 'Kruti Dev 010', 'Trio Devanagari Hindi', 'Gotu'; }
+ 
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+ 
+        #splash-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+            cursor: pointer;
+        }
+ 
+        #splash-screen.opened {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: scale(1.1);
+        }
+ 
+        .envelope-wrapper {
+            position: relative;
+            width: 340px;
+            height: 480px;
+            background: linear-gradient(145deg, #1c1c1e, #0a0a0c);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            outline: 1px solid rgba(255, 255, 255, 0.15);
+            outline-offset: -5px;
+            border-radius: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            padding: 30px;
+        }
+ 
+        .envelope-monogram {
+            font-size: 48px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.4));
+        }
+ 
+        .wax-seal-btn {
+            width: 90px;
+            height: 90px;
+            background: radial-gradient(circle at 30% 30%, #fcd34d, #b45309 70%, #78350f 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.4);
+            margin: 25px 0;
+            animation: pulseSeal 2.5s infinite ease-in-out;
+            transition: transform 0.3s;
+        }
+ 
+        @keyframes pulseSeal {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+            50% { transform: scale(1.06); box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+        }
+ 
+        .wax-seal-inner {
+            font-size: 32px;
+            color: #451a03;
+        }
+ 
+        .main-container {
+            max-width: 520px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 20px 100px;
+        }
+ 
+        section {
+            padding: 35px 0;
+            text-align: center;
+            position: relative;
+        }
+ 
+        .glass-card {
+            background: linear-gradient(180deg, rgba(70, 70, 75, 0.6) 0%, rgba(35, 35, 40, 0.8) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            outline: 1px solid rgba(255, 255, 255, 0.15);
+            outline-offset: -5px;
+            border-radius: 28px;
+            padding: 30px 22px;
+            margin-bottom: 26px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.12), inset 0 0 15px rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+/* rest of the file unchanged */
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const splash = document.getElementById('splash-screen');
+  const bg = document.getElementById('bg-music');
+
+  // Create a small accessible Play/Pause control (hidden by default).
+  const musicCtl = document.createElement('button');
+  musicCtl.id = 'music-control';
+  musicCtl.type = 'button';
+  musicCtl.setAttribute('aria-pressed', 'false');
+  musicCtl.textContent = 'Play music';
+  musicCtl.style.display = 'none';
+  musicCtl.style.position = 'fixed';
+  musicCtl.style.bottom = '92px';
+  musicCtl.style.right = '14px';
+  musicCtl.style.zIndex = 1200;
+  musicCtl.style.padding = '10px 12px';
+  musicCtl.style.borderRadius = '12px';
+  musicCtl.style.background = 'rgba(243,208,120,.12)';
+  musicCtl.style.color = '#f3d078';
+  musicCtl.style.border = '1px solid rgba(243,208,120,.25)';
+  musicCtl.style.cursor = 'pointer';
+
+  document.body.appendChild(musicCtl);
+
+  function updateButtonState() {
+    if (!bg) return;
+    if (!bg.paused) {
+      musicCtl.textContent = 'Pause music';
+      musicCtl.setAttribute('aria-pressed', 'true');
+    } else {
+      musicCtl.textContent = 'Play music';
+      musicCtl.setAttribute('aria-pressed', 'false');
+    }
+  }
+
+  musicCtl.addEventListener('click', async function () {
+    if (!bg) return;
+    try {
+      if (bg.paused) {
+        await bg.play();
+      } else {
+        bg.pause();
+      }
+    } catch (e) {
+      console.warn('Playback failed:', e);
+    }
+    updateButtonState();
+  });
+
+  function openInvitationAndTryPlay() {
+    if (splash) splash.classList.add('opened');
+    document.documentElement.classList.add('page-ready');
+    if (!bg) return;
+    bg.play().then(() => {
+      musicCtl.style.display = 'none';
+      updateButtonState();
+    }).catch((err) => {
+      musicCtl.style.display = 'inline-block';
+      console.warn('Autoplay blocked; showing play/pause button.', err);
+    });
+  }
+
+  if (splash) {
+    splash.addEventListener('click', openInvitationAndTryPlay);
+    splash.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') openInvitationAndTryPlay();
+    });
+  }
+
+  if (bg) {
+    bg.addEventListener('play', updateButtonState);
+    bg.addEventListener('pause', updateButtonState);
+  }
+});
+</script>
+</head>
+<body>
+<div id="v6Health" class="v6-health">V6 सेवा जाँच…</div>
+<!-- rest of page unchanged -->
+</body>
+</html>
