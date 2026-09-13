@@ -891,7 +891,7 @@ html{scroll-behavior:auto!important;overflow-x:hidden}body{overflow-x:hidden}
 </div></div>
             <div class="wedding-badge font-serif">शनिवार, 21 नवंबर 2026</div>
             <p class="font-script" style="font-size: 22px; color: var(--text-muted); max-width: 320px;">
-                “"रचना प्रकृति की, <br/> रज़ा किस्मत की,<br> और एक डोर प्रेम की"।”
+                “रचना प्रकृति की, <br/> रज़ा किस्मत की,<br> और एक डोर प्रेम की।”
             </p>
         </section>
  
@@ -1772,7 +1772,7 @@ html{scroll-behavior:auto!important;overflow-x:hidden}body{overflow-x:hidden}
 })();
  
  
-const V6={endpoint:'https://script.google.com/macros/s/AKfycbyW5AbSGILFAplu3umKhD4P4RMiXF3S8-XQvzFWZTIPogEremrKHzADCDwjuFG6_vHPGw/exec',folderId:'1RKILoYVgsWl8N2mHwCKetveUbRe7KMh_',defaultMusic:'https://drive.google.com/uc?export=download&id=1WD0nCPfdjOSfQtXqu_dwgIMmYq7k6phQ',maxBytes:35*1024*1024};
+const V6={endpoint:'https://script.google.com/macros/s/AKfycbzh2pcRa0SvOP1pMag1JyA1fYqJfx8LjriOvsd1mogQ2vDcK-R1vkU0v4qSjbsNt8nH3Q/exec',defaultMusic:'https://drive.google.com/uc?export=download&id=1WD0nCPfdjOSfQtXqu_dwgIMmYq7k6phQ',maxBytes:35*1024*1024};
 function driveDirectUrl(url){const m=String(url||'').match(/(?:\/d\/|id=)([\w-]{20,})/);return m?'https://drive.usercontent.google.com/download?id='+m[1]+'&export=download&confirm=t':url}
 async function apiV6(action,payload={}){const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),90000);try{let r;try{r=await fetch(V6.endpoint,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,...payload}),signal:ctl.signal,redirect:'follow'})}catch(networkError){throw new Error('नेटवर्क या CORS समस्या: '+networkError.message)}const text=await r.text();let d;try{d=JSON.parse(text)}catch{throw new Error('Apps Script ने JSON नहीं लौटाया। नया V6 deployment URL जाँचें।')}if(!d.success)throw new Error(d.message||d.error||'Server error');return d}finally{clearTimeout(timer)}}
 async function applyRemoteSettingsV6(){let s={};try{s=(await apiV6('getSettings')).settings||{};localStorage.setItem('np_site_settings_v6',JSON.stringify(s))}catch(e){s=JSON.parse(localStorage.getItem('np_site_settings_v6')||'{}')}if(s.themeGold)document.documentElement.style.setProperty('--gold-primary',s.themeGold);if(s.notice){const n=document.getElementById('siteNotice');if(n){n.textContent=s.notice;n.classList.add('show')}}}
@@ -1784,7 +1784,7 @@ async function checkV6Health(){const el=document.getElementById('v6Health');try{
 document.addEventListener('DOMContentLoaded',()=>{checkV6Health();applyRemoteSettingsV6();loadApprovedMediaV6();document.querySelectorAll('[data-live-filter]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-live-filter]').forEach(x=>x.classList.toggle('active',x===b));loadApprovedMediaV6(b.dataset.liveFilter)});setInterval(()=>loadApprovedMediaV6(document.querySelector('[data-live-filter].active')?.dataset.liveFilter||'all'),30000)});
  
  
-const V7EP='https://script.google.com/macros/s/AKfycbyW5AbSGILFAplu3umKhD4P4RMiXF3S8-XQvzFWZTIPogEremrKHzADCDwjuFG6_vHPGw/exec';
+const V7EP='https://script.google.com/macros/s/AKfycbzh2pcRa0SvOP1pMag1JyA1fYqJfx8LjriOvsd1mogQ2vDcK-R1vkU0v4qSjbsNt8nH3Q/exec';
 async function v7api(action,p={}){const r=await fetch(V7EP,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,...p}),redirect:'follow'});const t=await r.text();let d;try{d=JSON.parse(t)}catch{throw Error('Server JSON response नहीं मिला')}if(!d.success)throw Error(d.message||'Server error');return d}
 function mediaSrcV7(x){const id=x.id||x.fileId||'';if(x.kind==='video')return 'https://drive.google.com/file/d/'+id+'/preview';return 'https://drive.google.com/thumbnail?id='+id+'&sz=w1200'}
 loadApprovedMediaV6=async function(filter='all'){const grid=document.getElementById('approvedMediaGrid'),empty=document.getElementById('approvedEmpty'),state=document.getElementById('gallerySyncState');if(!grid||!empty||!state)return;try{const d=await v7api('list',{status:'approved'}),items=d.files||[];grid.replaceChildren();items.filter(x=>filter==='all'||x.kind===filter).forEach(x=>{const c=document.createElement('article');c.className='approved-card';let m;if(x.kind==='video'){m=document.createElement('iframe');m.src=mediaSrcV7(x);m.allow='autoplay; fullscreen';m.allowFullscreen=true}else{m=document.createElement('img');m.src=mediaSrcV7(x);m.alt='अतिथि द्वारा साझा विवाह तस्वीर';m.loading='lazy';m.onerror=()=>{m.src='preview.jpg'}}const p=document.createElement('p');p.textContent=(x.guestName||'अतिथि')+' द्वारा साझा';c.append(m,p);grid.append(c)});empty.style.display=items.length?'none':'block';state.textContent='Drive gallery sync • '+items.length+' स्वीकृत फ़ाइलें'}catch(e){state.textContent='स्वीकृत यादें अभी उपलब्ध नहीं हैं';grid.replaceChildren();empty.style.display='block'}};
