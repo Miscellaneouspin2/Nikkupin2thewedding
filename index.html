@@ -575,7 +575,7 @@
         }
  
         :root { --luxury-shadow: 0 18px 50px rgba(0,0,0,.5); }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: auto; }
         .v3-toolbar { position:fixed; top:12px; right:12px; z-index:950; display:flex; gap:8px; }
         .v3-chip { border:1px solid var(--gold-border); background:rgba(10,10,12,.9); color:#fff; border-radius:999px; padding:9px 12px; cursor:pointer; }
         .premium-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
@@ -1797,8 +1797,13 @@ document.addEventListener('DOMContentLoaded',()=>{prepareLocalMusicV7();renderAp
 /* V10 guest platform */
 const V10KEYS={guests:'np_guests_v10',rsvp:'np_rsvp_v10',songs:'np_songs_v10',gifts:'np_gifts_v10',checkins:'np_checkins_v10',settings:'np_settings_v10'};
 const v10get=(k,f)=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch{return f}},v10set=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-function setupAutoGalleryV10(){const box=document.querySelector('.gallery-grid-10');if(!box)return;box.classList.add('auto-gallery');let i=0,paused=false;const imgs=[...box.querySelectorAll('img')];const run=()=>{if(paused||document.hidden||!imgs.length)return;i=(i+1)%imgs.length;imgs.forEach(x=>x.classList.remove('is-current'));imgs[i].classList.add('is-current');imgs[i].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'center'})};let timer=setInterval(run,3500);['pointerdown','mouseenter','focusin'].forEach(e=>box.addEventListener(e,()=>paused=true));['pointerup','mouseleave','focusout'].forEach(e=>box.addEventListener(e,()=>paused=false));box.setAttribute('aria-label','10 तस्वीरों की स्वचालित युगल गैलरी');}
-document.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('v10RsvpName');});
+function setupAutoGalleryV10(){
+  // ऑटो-स्क्रॉल की वजह से पेज ऊपर जाने की समस्या को रोकने के लिए इसे खाली छोड़ दिया गया है
+  const box=document.querySelector('.gallery-grid-10');
+  if(!box)return;
+  box.classList.add('auto-gallery');
+}
+        document.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('v10RsvpName');});
  
 /* V12 integrated workflows */
 const V12={endpoint:V7EP,wa:'919352248897',queue:'np_pending_v12'};const read=(k,f=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch{return f}},write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));const uid=p=>p+'-'+Date.now().toString(36).toUpperCase()+Math.random().toString(36).slice(2,6).toUpperCase();const phoneOK=v=>/^\d{10}$/.test(v);async function saveRecordV12(action,row){try{await v7api(action,row);return 'saved'}catch(e){const q=read(V12.queue);q.push({action,row});write(V12.queue,q);return 'pending'}}async function retryPendingV12(){const q=read(V12.queue),left=[];for(const x of q){try{await v7api(x.action,x.row)}catch{left.push(x)}}write(V12.queue,left);alert(left.length?'कुछ रिकॉर्ड अभी Sync Pending हैं।':'सभी रिकॉर्ड sync हो गए।')}window.addEventListener('online',retryPendingV12);
