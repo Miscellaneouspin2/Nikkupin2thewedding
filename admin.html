@@ -31,7 +31,7 @@
 </main><div id="toast" class="toast"></div>
 <script>
 'use strict';
-const EP='https://script.google.com/macros/s/AKfycbyW5AbSGILFAplu3umKhD4P4RMiXF3S8-XQvzFWZTIPogEremrKHzADCDwjuFG6_vHPGw/exec';
+const EP='https://script.google.com/macros/s/AKfycbzh2pcRa0SvOP1pMag1JyA1fYqJfx8LjriOvsd1mogQ2vDcK-R1vkU0v4qSjbsNt8nH3Q/exec';
 const TYPES={wishes:{action:'listWishes',key:'np_wishes_v3'},rsvp:{action:'listRsvp',key:'np_rsvp_v10'},voice:{action:'listVoiceWishes',key:'np_voice_v12'},songs:{action:'listSongRequests',key:'np_songs_v10'},gifts:{action:'listGifts',key:'np_gifts_v10'},stay:{action:'listAccommodation',key:'np_stay_v12'},uploads:{action:'list',key:'np_media_queue_v6'}};
 const cache={};let mediaItems=[],tvWindow=null;
 const el=id=>document.getElementById(id),local=(k,f=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch{return f}};
