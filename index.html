@@ -862,7 +862,36 @@ html{scroll-behavior:auto!important;overflow-x:hidden}body{overflow-x:hidden}
 @media(min-width:768px){.main-container{max-width:650px}#dresscode .dress-card,#dresscode .dress-card.is-active{flex-basis:70%!important}#dresscode .dress-img{height:320px!important}}
 </style>
  
-<style id="v15-production-css">.v15-status{position:fixed;left:12px;bottom:82px;z-index:980;padding:7px 10px;border-radius:999px;font-size:10px;background:#10251c;color:#86efac;border:1px solid #2f855a}.v15-status.off{background:#3b0a0a;color:#fecaca;border-color:#ef4444}#dresscode .dress-card{filter:none!important;opacity:1!important;transform:none!important}.upload-drop.busy{pointer-events:none;opacity:.7}@media(max-width:520px){.v15-status{bottom:76px;left:8px}}</style>
+<style id="v15-production-css">.payment-feed{
+position:fixed;
+left:12px;
+bottom:145px;
+z-index:1800;
+width:min(320px,82vw);
+pointer-events:none;
+}
+
+.payment-toast{
+background:#10251c;
+border:1px solid #2f855a;
+color:#fff;
+padding:12px 14px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,.45);
+animation:feedSlide .5s ease;
+}
+
+@keyframes feedSlide{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:none;
+}
+}
+    .v15-status{position:fixed;left:12px;bottom:82px;z-index:980;padding:7px 10px;border-radius:999px;font-size:10px;background:#10251c;color:#86efac;border:1px solid #2f855a}.v15-status.off{background:#3b0a0a;color:#fecaca;border-color:#ef4444}#dresscode .dress-card{filter:none!important;opacity:1!important;transform:none!important}.upload-drop.busy{pointer-events:none;opacity:.7}@media(max-width:520px){.v15-status{bottom:76px;left:8px}}</style>
 <style id="v151-fixes">html{overflow-anchor:auto}.order-verify-state{min-height:20px;margin:5px 0 10px;font-size:12px}.order-verify-state.checking{color:#fde68a}.order-verify-state.valid{color:#86efac}.order-verify-state.invalid{color:#fecaca}.verified-order-badge{display:inline-block;padding:5px 9px;border:1px solid #2f855a;border-radius:99px;color:#86efac;background:#10251c;font-size:10px}</style>
 <style id="final-magic-css">
 *,*::before,*::after,html,body,button,input,select,textarea,a{font-family:'Gotu',sans-serif!important}
@@ -1413,7 +1442,8 @@ h1,h2,h3,h4,.section-heading,.event-title,.couple-name,.story-title,.live-gold,.
         <div style="width: 1px; height: 15px; background: var(--gold-border);"></div>
         <button class="nav-btn" type="button" aria-label="विवाह कैलेंडर में जोड़ें" onclick="addToCalendar()">📅 कैलेंडर में जोड़ें</button>
     </div>
- 
+ <div id="paymentFeed" class="payment-feed"></div>
+    
     <div class="offline-badge">ऑफलाइन मोड</div>
     <canvas id="confettiCanvas"></canvas>
  
@@ -1870,12 +1900,62 @@ function setupAutoGalleryV10(){const box=document.querySelector('.gallery-grid-1
 document.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('v10RsvpName');});
  
 /* V12 integrated workflows */
-const V12={endpoint:V7EP,wa:'919352248897',queue:'np_pending_v12'};const read=(k,f=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch{return f}},write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));const uid=p=>p+'-'+Date.now().toString(36).toUpperCase()+Math.random().toString(36).slice(2,6).toUpperCase();const phoneOK=v=>/^\d{10}$/.test(v);async function saveRecordV12(action,row){try{await v7api(action,row);return 'saved'}catch(e){const q=read(V12.queue);q.push({action,row});write(V12.queue,q);return 'pending'}}async function retryPendingV12(){const q=read(V12.queue),left=[];for(const x of q){try{await v7api(x.action,x.row)}catch{left.push(x)}}write(V12.queue,left);alert(left.length?'कुछ रिकॉर्ड अभी Sync Pending हैं।':'सभी रिकॉर्ड sync हो गए।')}window.addEventListener('online',retryPendingV12);
+let paymentQueue=[];
+let paymentRunning=false;
+
+function pushPaymentFeed(data){
+
+ paymentQueue.push(data);
+
+ if(!paymentRunning){
+     runPaymentFeed();
+ }
+
+}
+
+async function runPaymentFeed(){
+
+ paymentRunning=true;
+
+ while(paymentQueue.length){
+
+   const item=paymentQueue.shift();
+
+   paymentFeed.innerHTML=`
+      <div class="payment-toast">
+         🎁 ${item.name}
+         <br>
+         ${item.message}
+      </div>
+   `;
+
+   await new Promise(r=>setTimeout(r,3500));
+
+   paymentFeed.innerHTML='';
+
+   await new Promise(r=>setTimeout(r,600));
+ }
+
+ paymentRunning=false;
+                                             }
+    const V12={endpoint:V7EP,wa:'919352248897',queue:'np_pending_v12'};const read=(k,f=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch{return f}},write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));const uid=p=>p+'-'+Date.now().toString(36).toUpperCase()+Math.random().toString(36).slice(2,6).toUpperCase();const phoneOK=v=>/^\d{10}$/.test(v);async function saveRecordV12(action,row){try{await v7api(action,row);return 'saved'}catch(e){const q=read(V12.queue);q.push({action,row});write(V12.queue,q);return 'pending'}}async function retryPendingV12(){const q=read(V12.queue),left=[];for(const x of q){try{await v7api(x.action,x.row)}catch{left.push(x)}}write(V12.queue,left);alert(left.length?'कुछ रिकॉर्ड अभी Sync Pending हैं।':'सभी रिकॉर्ड sync हो गए।')}window.addEventListener('online',retryPendingV12);
 function whatsappV12(text){window.open('https://wa.me/'+V12.wa+'?text='+encodeURIComponent(text),'_blank','noopener')}
 async function submitVoiceV12(){const n=voiceGuestName.value.trim(),p=voicePhone.value.trim();if(!n||!phoneOK(p))return alert('नाम और सही 10 अंकों का मोबाइल नंबर दर्ज करें।');const row={id:uid('VOICE'),name:n,phone:p,message:voiceMessage.value.trim(),status:'Voice Note Pending',whatsappStatus:'opened',at:new Date().toISOString()};voiceSubmit.disabled=true;const s=await saveRecordV12('saveVoiceWish',row);voiceSubmit.disabled=false;whatsappV12(`नई आवाज में शुभकामना\nVoice Request ID: ${row.id}\nGuest Name: ${n}\nWhatsApp Number: ${p}\nसंदेश: ${row.message||'-'}\nDate and Time: ${row.at}\nकृपया इसी WhatsApp chat में voice note attach करके भेजें।`);showV12(s==='saved'?'WhatsApp opened • Admin record saved':'WhatsApp opened • Sync Pending')}
 async function submitSongV12(){const n=songGuestName.value.trim(),p=songPhone.value.trim(),title=songTitle.value.trim();if(!n||!phoneOK(p)||!title)return alert('नाम, सही मोबाइल नंबर और गीत का नाम दर्ज करें।');const row={id:uid('SONG'),name:n,phone:p,song:title,artist:songArtist.value.trim(),dedication:songDedication.value.trim(),status:'Pending',at:new Date().toISOString()};songSubmit.disabled=true;const s=await saveRecordV12('saveSongRequest',row);songSubmit.disabled=false;whatsappV12(`नया संगीत गीत अनुरोध\nRequest ID: ${row.id}\nGuest Name: ${n}\nWhatsApp Number: ${p}\nSong Name: ${title}\nFilm/Artist: ${row.artist||'-'}\nDedication: ${row.dedication||'-'}\nDate and Time: ${row.at}`);showV12(s==='saved'?'WhatsApp opened • Admin record saved':'WhatsApp opened • Sync Pending')}
-async function submitBookGiftV12(){const n=bookGuestName.value.trim(),p=bookPhone.value.trim(),book=giftBookName.value.trim();if(!n||!phoneOK(p)||!book)return alert('नाम, सही मोबाइल नंबर और पुस्तक का नाम दर्ज करें।');const row={id:uid('GIFT'),type:'पुस्तक',name:n,phone:p,recipient:giftTargetPerson.value,author:giftBookAuthor.value.trim(),book,platform:bookPlatform.value,reference:bookOrderId.value.trim(),note:bookNote.value.trim(),status:'Pending',thanks:'Pending',at:new Date().toISOString()};bookSubmit.disabled=true;const s=await saveRecordV12('saveGift',row);bookSubmit.disabled=false;whatsappV12(`नया पुस्तक उपहार\nGuest Name: ${n}\nWhatsApp Number: ${p}\nRecipient: ${row.recipient}\nAuthor: ${row.author}\nBook Name: ${book}\nPlatform: ${row.platform}\nOrder ID: ${row.reference||'-'}\nNote: ${row.note||'-'}\nGift ID: ${row.id}\nDate and Time: ${row.at}`);showV12(s==='saved'?'उपहार रिकॉर्ड सुरक्षित है।':'WhatsApp opened • Sync Pending')}
-async function submitShagunV12(){const n=shagunGuestName.value.trim(),p=shagunPhone.value.trim(),amt=Number(upiPaymentAmount.value),ref=shagunTxn.value.trim();if(!n||!phoneOK(p)||amt<=0||!ref)return alert('नाम, सही मोबाइल, राशि और Transaction ID दर्ज करें।');const row={id:uid('GIFT'),type:'शगुन',name:n,phone:p,recipient:giftTargetPerson.value,amount:amt,reference:ref,note:shagunNote.value.trim(),status:'Pending',thanks:'Pending',at:new Date().toISOString()};shagunSubmit.disabled=true;const s=await saveRecordV12('saveGift',row);shagunSubmit.disabled=false;whatsappV12(`नया शगुन विवरण\nGuest Name: ${n}\nWhatsApp Number: ${p}\nRecipient: ${row.recipient}\nAmount: ₹${amt}\nTransaction ID: ${ref}\nGift ID: ${row.id}\nDate and Time: ${row.at}`);showV12(s==='saved'?'शगुन विवरण सुरक्षित है।':'WhatsApp opened • Sync Pending')}
+async function submitBookGiftV12(){const n=bookGuestName.value.trim(),p=bookPhone.value.trim(),book=giftBookName.value.trim();if(!n||!phoneOK(p)||!book)return alert('नाम, सही मोबाइल नंबर और पुस्तक का नाम दर्ज करें।');const row={id:uid('GIFT'),type:'पुस्तक',name:n,phone:p,recipient:giftTargetPerson.value,author:giftBookAuthor.value.trim(),book,platform:bookPlatform.value,reference:bookOrderId.value.trim(),note:bookNote.value.trim(),status:'Pending',thanks:'Pending',at:new Date().toISOString()};bookSubmit.disabled=true;const s=await saveRecordV12('saveGift',row);if(s==='saved'){
+ pushPaymentFeed({
+   name:n,
+   message:`ने पुस्तक उपहार भेजा`
+ });
+}
+                                   bookSubmit.disabled=false;whatsappV12(`नया पुस्तक उपहार\nGuest Name: ${n}\nWhatsApp Number: ${p}\nRecipient: ${row.recipient}\nAuthor: ${row.author}\nBook Name: ${book}\nPlatform: ${row.platform}\nOrder ID: ${row.reference||'-'}\nNote: ${row.note||'-'}\nGift ID: ${row.id}\nDate and Time: ${row.at}`);showV12(s==='saved'?'उपहार रिकॉर्ड सुरक्षित है।':'WhatsApp opened • Sync Pending')}
+async function submitShagunV12(){const n=shagunGuestName.value.trim(),p=shagunPhone.value.trim(),amt=Number(upiPaymentAmount.value),ref=shagunTxn.value.trim();if(!n||!phoneOK(p)||amt<=0||!ref)return alert('नाम, सही मोबाइल, राशि और Transaction ID दर्ज करें।');const row={id:uid('GIFT'),type:'शगुन',name:n,phone:p,recipient:giftTargetPerson.value,amount:amt,reference:ref,note:shagunNote.value.trim(),status:'Pending',thanks:'Pending',at:new Date().toISOString()};shagunSubmit.disabled=true;const s=await saveRecordV12('saveGift',row);if(s==='saved'){
+ pushPaymentFeed({
+    name:n,
+    message:`ने ₹${amt} शगुन भेजा`
+ });
+}
+                                 shagunSubmit.disabled=false;whatsappV12(`नया शगुन विवरण\nGuest Name: ${n}\nWhatsApp Number: ${p}\nRecipient: ${row.recipient}\nAmount: ₹${amt}\nTransaction ID: ${ref}\nGift ID: ${row.id}\nDate and Time: ${row.at}`);showV12(s==='saved'?'शगुन विवरण सुरक्षित है।':'WhatsApp opened • Sync Pending')}
 async function submitStayV12(){const n=stayName.value.trim(),d=stayDate.value;if(!n||!d)return alert('नाम और रुकने की तिथि चुनें।');const row={id:uid('STAY'),name:n,date:d,duration:stayDuration.value,status:'Pending',notes:'',at:new Date().toISOString()};staySubmit.disabled=true;const s=await saveRecordV12('saveAccommodation',row);staySubmit.disabled=false;whatsappV12(`🏨 ठहराव सहायता अनुरोध\nअतिथि नाम: ${n}\nरुकने की तिथि: ${d}\nरुकने की अवधि: ${row.duration}\nसंदेश: हमें विवाह समारोह के दौरान रात्रि विश्राम हेतु ठहरने की व्यवस्था चाहिए। कृपया उपलब्ध आवास संबंधी जानकारी साझा करें।\nअनुरोध समय: ${row.at}\nRequest ID: ${row.id}`);showV12(s==='saved'?'आपका ठहराव अनुरोध सफलतापूर्वक प्राप्त हो गया है।':'अनुरोध बना • Sync Pending')}
 async function saveQuickRsvpV12(){const n=v10RsvpName.value.trim(),p=v10RsvpPhone.value.trim();if(!n||!phoneOK(p))return alert('कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।');const row={id:uid('RSVP'),name:n,phone:p,attend:v10RsvpAttend.value,size:Number(v10PartySize.value),meal:v10Meal.value,status:'Pending',at:new Date().toISOString()};rsvpSubmitV12.disabled=true;const s=await saveRecordV12('saveRsvp',row);rsvpSubmitV12.disabled=false;whatsappV12(`✅ नया RSVP प्राप्त हुआ\nRSVP ID: ${row.id}\nनाम: ${n}\nमोबाइल नंबर: ${p}\nउपस्थिति: ${row.attend}\nकुल सदस्य: ${row.size}\nभोजन विकल्प: ${row.meal}\nदिनांक और समय: ${row.at}`);showV12(s==='saved'?'RSVP सुरक्षित हो गया।':'RSVP सुरक्षित • Sync Pending')}
 function showV12(t){uploadSuccessText.textContent=t;uploadSuccessModal.classList.add('open')}
