@@ -1704,16 +1704,9 @@ h1,h2,h3,h4,.section-heading,.event-title,.couple-name,.story-title,.live-gold,.
         }
  
         function payViaUPI() {
-            const target = document.getElementById('giftTargetPerson').value;
-            const amount = document.getElementById('upiPaymentAmount').value;
-            const upiId = target === 'Bride' ? 'nikita843@ptyes' : '9352248897@ptyes';
- 
-            if(!amount || amount <= 0) return alert('कृपया सही राशि लिखें।');
- 
-            const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(target)}&am=${amount}&cu=INR&tn=${encodeURIComponent('विवाह शगुन')}`;
-            window.location.href = upiUrl;
-        }
- 
+    window.open('https://razorpay.me/@Shunya', '_blank');
+}
+
         // STEP 9: डिजिटल शुभकामना पटल Real-time Display
         function getWishes(){ try { return JSON.parse(localStorage.getItem('np_wishes_v3') || '[]'); } catch(e){ return []; } }
         
