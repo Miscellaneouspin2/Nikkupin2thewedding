@@ -1644,7 +1644,9 @@ Add future cards manually only after their repository files exist.
         }
  
  
-        const MEDIA_UPLOAD_CONFIG={driveFolderId:'1RKILoYVgsWl8N2mHwCKetveUbRe7KMh_',driveFolderUrl:'https://drive.google.com/drive/folders/1RKILoYVgsWl8N2mHwCKetveUbRe7KMh_',appsScriptWebAppUrl:'https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec'};
+        const MEDIA_UPLOAD_CONFIG={driveFolderId:1Y4SygMzv_bBa2ahqpVQIYO2QilVbczyO_',
+            driveFolderUrl:'https://drive.google.com/drive/folders/1Y4SygMzv_bBa2ahqpVQIYO2QilVbczyO_',
+        appsScriptWebAppUrl:'https://script.google.com/macros/s/AKfycbwYM_7x1YIzPC8s0K6lc2BzUBvcL_cZ3_i7zPcNvTShwvB6_s5ET7J-NNbi7QAgZHAkTQ/exec'};
         let selectedGuestMedia=[];let previewUrls=[];
         function safeGuestName(s){return s.normalize('NFKC').replace(/[^\p{L}\p{N} _-]+/gu,'').trim().replace(/\s+/g,'_').slice(0,60)||'Guest'}
         function setGuestMedia(files){const incoming=[...(files||[])].filter(f=>/^(image|video)\//.test(f.type));if(!incoming.length)return alert('कृपया केवल तस्वीर या वीडियो चुनें।');selectedGuestMedia.push(...incoming);renderMediaQueue();}
@@ -1878,7 +1880,7 @@ Add future cards manually only after their repository files exist.
 })();
  
  
-const V6={endpoint:'https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec',folderId:'1RKILoYVgsWl8N2mHwCKetveUbRe7KMh_',defaultMusic:'https://drive.google.com/uc?export=download&id=1WD0nCPfdjOSfQtXqu_dwgIMmYq7k6phQ',maxBytes:35*1024*1024};
+const V6={endpoint:'https://script.google.com/macros/s/AKfycbwYM_7x1YIzPC8s0K6lc2BzUBvcL_cZ3_i7zPcNvTShwvB6_s5ET7J-NNbi7QAgZHAkTQ/exec',folderid:'1Y4SygMzv_bBa2ahqpVQIYO2QilVbczyO_',defaultMusic:'music.mp3',maxBytes:35*1024*1024};
 function driveDirectUrl(url){const m=String(url||'').match(/(?:\/d\/|id=)([\w-]{20,})/);return m?'https://drive.usercontent.google.com/download?id='+m[1]+'&export=download&confirm=t':url}
 async function apiV6(action,payload={}){const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),90000);try{let r;try{r=await fetch(V6.endpoint,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,...payload}),signal:ctl.signal,redirect:'follow'})}catch(networkError){throw new Error('नेटवर्क या CORS समस्या: '+networkError.message)}const text=await r.text();let d;try{d=JSON.parse(text)}catch{throw new Error('Apps Script ने JSON नहीं लौटाया। नया V6 deployment URL जाँचें।')}if(!d.success)throw new Error(d.message||d.error||'Server error');return d}finally{clearTimeout(timer)}}
 async function applyRemoteSettingsV6(){let s={};try{s=(await apiV6('getSettings')).settings||{};localStorage.setItem('np_site_settings_v6',JSON.stringify(s))}catch(e){s=JSON.parse(localStorage.getItem('np_site_settings_v6')||'{}')}if(s.themeGold)document.documentElement.style.setProperty('--gold-primary',s.themeGold);if(s.notice){const n=document.getElementById('siteNotice');if(n){n.textContent=s.notice;n.classList.add('show')}}}
@@ -1890,7 +1892,7 @@ async function checkV6Health(){const el=document.getElementById('v6Health');try{
 document.addEventListener('DOMContentLoaded',()=>{checkV6Health();applyRemoteSettingsV6();loadApprovedMediaV6();document.querySelectorAll('[data-live-filter]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-live-filter]').forEach(x=>x.classList.toggle('active',x===b));loadApprovedMediaV6(b.dataset.liveFilter)});setInterval(()=>loadApprovedMediaV6(document.querySelector('[data-live-filter].active')?.dataset.liveFilter||'all'),30000)});
  
  
-const V7EP='https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec';
+const V7EP='https://script.google.com/macros/s/AKfycbwYM_7x1YIzPC8s0K6lc2BzUBvcL_cZ3_i7zPcNvTShwvB6_s5ET7J-NNbi7QAgZHAkTQ/exec';
 async function v7api(action,p={}){const r=await fetch(V7EP,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,...p}),redirect:'follow'});const t=await r.text();let d;try{d=JSON.parse(t)}catch{throw Error('Server JSON response नहीं मिला')}if(!d.success)throw Error(d.message||'Server error');return d}
 function mediaSrcV7(x){const id=x.id||x.fileId||'';if(x.kind==='video')return 'https://drive.google.com/file/d/'+id+'/preview';return 'https://drive.google.com/thumbnail?id='+id+'&sz=w1200'}
 loadApprovedMediaV6=async function(filter='all'){const grid=document.getElementById('approvedMediaGrid'),empty=document.getElementById('approvedEmpty'),state=document.getElementById('gallerySyncState');if(!grid||!empty||!state)return;try{const d=await v7api('list',{status:'approved'}),items=d.files||[];grid.replaceChildren();items.filter(x=>filter==='all'||x.kind===filter).forEach(x=>{const c=document.createElement('article');c.className='approved-card';let m;if(x.kind==='video'){m=document.createElement('iframe');m.src=mediaSrcV7(x);m.allow='autoplay; fullscreen';m.allowFullscreen=true}else{m=document.createElement('img');m.src=mediaSrcV7(x);m.alt='अतिथि द्वारा साझा विवाह तस्वीर';m.loading='lazy';m.onerror=()=>{m.src='preview.jpg'}}const p=document.createElement('p');p.textContent=(x.guestName||'अतिथि')+' द्वारा साझा';c.append(m,p);grid.append(c)});empty.style.display=items.length?'none':'block';state.textContent='Drive gallery sync • '+items.length+' स्वीकृत फ़ाइलें'}catch(e){state.textContent='स्वीकृत यादें अभी उपलब्ध नहीं हैं';grid.replaceChildren();empty.style.display='block'}};
@@ -2192,7 +2194,7 @@ ${OFFICIAL_SITE_URL}`;if(navigator.share){navigator.share({title:'निकि�
 @media(max-width:759px){#family-tree .family-slider{grid-template-columns:44px minmax(0,1fr) 44px!important;min-height:520px!important}#family-tree .family-card{width:100%!important}#family-tree .family-photo{height:min(440px,105vw)!important}.service-actions{grid-template-columns:1fr!important}#design-services .service-card{padding:24px 18px!important}.service-list{grid-template-columns:1fr!important}.official-memory-card{flex-basis:92%}.official-memory-card video,.official-memory-card img{height:min(500px,112vw)}.bottom-nav{bottom:max(10px,env(safe-area-inset-bottom))!important}.main-container{padding-bottom:125px!important}}
 @media(min-width:760px){#post-wedding>.glass-card,#design-services .service-card{width:100%!important}.official-memory-card{flex-basis:72%}}
 </style><script id="revision2-final-js">
-const REVISION2_BACKEND='https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec';
+const REVISION2_BACKEND='https://script.google.com/macros/s/AKfycbwYM_7x1YIzPC8s0K6lc2BzUBvcL_cZ3_i7zPcNvTShwvB6_s5ET7J-NNbi7QAgZHAkTQ/exec';
 function mediaMissing(el){el.hidden=true;const fallback=el.parentElement?.querySelector('.media-fallback,.video-fallback,.official-memory-fallback');if(fallback)fallback.hidden=false}
 function mediaLoaded(el){el.hidden=false;const fallback=el.parentElement?.querySelector('.media-fallback,.video-fallback,.official-memory-fallback');if(fallback)fallback.hidden=true}
 function friendlyError(){return 'सेवा से संपर्क नहीं हो सका। आपकी जानकारी सुरक्षित है, कृपया थोड़ी देर बाद दोबारा प्रयास करें।'}
