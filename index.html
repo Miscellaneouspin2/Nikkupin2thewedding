@@ -700,7 +700,7 @@
   --ease-out:cubic-bezier(.215,.61,.355,1);
   --ease-spring:cubic-bezier(.2,1.35,.35,1);
 }
-body{opacity:0;transition:opacity var(--motion-slow) var(--ease-out)}
+body{opacity:1;transition:opacity var(--motion-slow) var(--ease-out)}
 body.page-ready{opacity:1}
 @media (prefers-reduced-motion:no-preference){
   section{opacity:0;transform:translateY(28px) scale(.985);transition:opacity var(--motion-slow) var(--ease-out),transform var(--motion-slow) var(--ease-spring)}
