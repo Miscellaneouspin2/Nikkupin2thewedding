@@ -1435,7 +1435,7 @@ Add future cards manually only after their repository files exist.
 <p>आधिकारिक तस्वीरें और वीडियो उपलब्ध होने पर यहाँ जोड़े जाएँगे।</p></div>
             </div>
         </section>
-<section id="live-wedding-v10"><div class="v10-card"><divclass="v10-card"><div class="section-tag"><span class="live-dot"></span> लाइव विवाह अपडेट</div><h2 class="section-heading gold-text">आज का कार्यक्रम</h2><div id="todayEvents" class="today-events"></div><div class="v10-grid"><div><strong class="live-gold">बारात स्थिति</strong><p id="baraatStatus">बारात की लाइव स्थिति विवाह के दिन उपलब्ध होगी</p><div id="baraatMap"></div><a id="baraatMapLink" class="btn-gold" target="_blank" rel="noopener" hidden>Google Maps में खोलें</a></div><div><strong class="live-gold">आज का कार्यक्रम</strong><p id="nextEventStatus"></p></div></div></div></section>
+<section id="live-wedding-v10"><div class="v10-card"><div class="section-tag"><span class="live-dot"></span> लाइव विवाह अपडेट</div><h2 class="section-heading gold-text">आज का कार्यक्रम</h2><div id="todayEvents" class="today-events"></div><div class="v10-grid"><div><strong class="live-gold">बारात स्थिति</strong><p id="baraatStatus">बारात की लाइव स्थिति विवाह के दिन उपलब्ध होगी</p><div id="baraatMap"></div><a id="baraatMapLink" class="btn-gold" target="_blank" rel="noopener" hidden>Google Maps में खोलें</a></div><div><strong class="live-gold">आज का कार्यक्रम</strong><p id="nextEventStatus"></p></div></div></div></section>
 <section id="quick-rsvp-v10"><div class="v10-card"><div class="section-tag">त्वरित RSVP</div><h2 class="section-heading gold-text">उपस्थिति एवं भोजन</h2><input id="v10RsvpName" class="v10-field" placeholder="आपका पूरा नाम"><input id="v10RsvpPhone" class="v10-field" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" placeholder="अपना 10 अंकों का मोबाइल नंबर लिखें"><select id="v10RsvpAttend" class="v10-field"><option value="yes">हाँ, अवश्य आएँगे</option><option value="maybe">अभी निश्चित नहीं</option><option value="no">शामिल नहीं हो पाएँगे</option></select><input id="v10PartySize" class="v10-field" type="number" min="1" max="20" value="1" placeholder="कुल सदस्य"><select id="v10Meal" class="v10-field"><option>शाकाहारी</option><option>जैन भोजन</option><option>विशेष सहायता चाहिए</option></select><button id="rsvpSubmitV12" class="btn-gold" style="width:100%" onclick="saveQuickRsvpV12()">RSVP सुरक्षित करें</button></div></section>
  
 <!-- Footer -->
@@ -1644,9 +1644,11 @@ Add future cards manually only after their repository files exist.
         }
  
  
-        const MEDIA_UPLOAD_CONFIG={driveFolderId:1Y4SygMzv_bBa2ahqpVQIYO2QilVbczyO_',
-            driveFolderUrl:'https://drive.google.com/drive/folders/1Y4SygMzv_bBa2ahqpVQIYO2QilVbczyO_',
-        appsScriptWebAppUrl:'https://script.google.com/macros/s/AKfycbwYM_7x1YIzPC8s0K6lc2BzUBvcL_cZ3_i7zPcNvTShwvB6_s5ET7J-NNbi7QAgZHAkTQ/exec'};
+        const MEDIA_UPLOAD_CONFIG = {
+  driveFolderId: '1Y4SygMzv_bBa2ahqpVQIYO2QilVbczyO_',
+  driveFolderUrl: 'https://drive.google.com/drive/folders/1Y4SygMzv_bBa2ahqpVQIYO2QilVbczyO_',
+  appsScriptWebAppUrl: 'https://script.google.com/macros/s/AKfycbwYM_7x1YIzPC8s0K6lc2BzUBvcL_cZ3_i7zPcNvTShwvB6_s5ET7J-NNbi7QAgZHAkTQ/exec'
+};
         let selectedGuestMedia=[];let previewUrls=[];
         function safeGuestName(s){return s.normalize('NFKC').replace(/[^\p{L}\p{N} _-]+/gu,'').trim().replace(/\s+/g,'_').slice(0,60)||'Guest'}
         function setGuestMedia(files){const incoming=[...(files||[])].filter(f=>/^(image|video)\//.test(f.type));if(!incoming.length)return alert('कृपया केवल तस्वीर या वीडियो चुनें।');selectedGuestMedia.push(...incoming);renderMediaQueue();}
