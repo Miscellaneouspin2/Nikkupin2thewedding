@@ -1917,55 +1917,20 @@ function setupAutoGalleryV10(){const box=document.querySelector('.gallery-grid-1
 document.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('v10RsvpName');});
  
 /* V12 integrated workflows */
-let paymentQueue=[];
-let paymentRunning=false;
-
-
-function pushPaymentFeed(data){
-
-
- paymentQueue.push(data);
-
-
- if(!paymentRunning){
-     runPaymentFeed();
- }
-
-
+let paymentQueue=[]; let paymentRunning=false; function pushPaymentFeed(data){ paymentQueue.push(data); if(!paymentRunning){
+     runPaymentFeed(); }
 }
-
-
-async function runPaymentFeed(){
-
-
- paymentRunning=true;
-
-
- while(paymentQueue.length){
-
-
+async function runPaymentFeed(){paymentRunning=true; while(paymentQueue.length){
    const item=paymentQueue.shift();
-
-
-   paymentFeed.innerHTML=`
-      <div class="payment-toast">
-         🎁 ${item.name}
+   paymentFeed.innerHTML=`<div class="payment-toast"   🎁 ${item.name}
          <br>
          ${item.message}
       </div>
    `;
-
-
    await new Promise(r=>setTimeout(r,3500));
-
-
    paymentFeed.innerHTML='';
-
-
    await new Promise(r=>setTimeout(r,600));
  }
-
-
  paymentRunning=false;
                                              }
     const V12={endpoint:V7EP,wa:'919352248897',queue:'np_pending_v12'};const read=(k,f=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch{return f}},write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));const uid=p=>p+'-'+Date.now().toString(36).toUpperCase()+Math.random().toString(36).slice(2,6).toUpperCase();const phoneOK=v=>/^\d{10}$/.test(v);async function saveRecordV12(action,row){try{await v7api(action,row);return 'saved'}catch(e){const q=read(V12.queue);q.push({action,row});write(V12.queue,q);return 'pending'}}async function retryPendingV12(){const q=read(V12.queue),left=[];for(const x of q){try{await v7api(x.action,x.row)}catch{left.push(x)}}write(V12.queue,left);alert(left.length?'कुछ रिकॉर्ड अभी Sync Pending हैं।':'सभी रिकॉर्ड sync हो गए।')}window.addEventListener('online',retryPendingV12);
@@ -2260,8 +2225,14 @@ document.addEventListener('DOMContentLoaded',()=>{revision2Health()},{once:true}
 }
 
 /* Family photos: zoom out so top and side edges are not cropped. */
-#family-tree .family-photo{object-fit:contain!important;object-position:center!important;padding:8px!important;background:#08080b!important}
-
+#family-tree .family-photo{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    padding:0!important;
+    background:transparent!important;
+}
 /* Every service/action box uses the same full width. */
 #design-services,#design-services .service-card{width:100%!important;max-width:100%!important;box-sizing:border-box!important}
 #design-services .service-actions{width:100%!important;align-items:stretch!important}
