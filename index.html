@@ -2229,7 +2229,7 @@ function serviceMessage(){const t=document.getElementById('websiteType')?.value|
 🙏 धन्यवाद
 🆔 Request ID: ${id}
 ━━━━━━━━━━━━━━━━━━━━`}
-function sendServiceEnquiry(kind){const m=serviceMessage();if(!m)return;if(kind==='whatsapp')open('https://wa.me/919352248897?text='+encodeURIComponent(m),'_blank','noopener');if(kind==='telegram')open('https://t.me/UltimateShunya?text='+encodeURIComponent(m),'_blank','noopener');if(kind==='email')location.href='mailto:shunyaoneshunya@gmail.com?subject='+encodeURIComponent('Website Enquiry')+'&body='+encodeURIComponent(m)}
+function sendServiceEnquiry(kind){const m=serviceMessage();if(!m)return;if(kind==='whatsapp')open('https://wa.me/919255117793?text='+encodeURIComponent(m),'_blank','noopener');if(kind==='telegram')open('https://t.me/shunyaoneshunya?text='+encodeURIComponent(m),'_blank','noopener');if(kind==='email')location.href='mailto:shunyaoneshunya@gmail.com?subject='+encodeURIComponent('Website Enquiry')+'&body='+encodeURIComponent(m)}
 window.shareWhatsApp=function(){trackActivity('shares');const text=`✨ सादर आमंत्रण! ✨
 निकिता एवं पिंटू का शुभ विवाह
 ${OFFICIAL_SITE_URL}`;if(navigator.share){navigator.share({title:'निकिता एवं पिंटू | डिजिटल विवाह आमंत्रण',text,url:OFFICIAL_SITE_URL}).catch(()=>{})}else open('https://api.whatsapp.com/send?text='+encodeURIComponent(text),'_blank','noopener')};
